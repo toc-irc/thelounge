@@ -87,3 +87,18 @@ Before submitting any change, make sure to:
 - Run `yarn test` to execute linters and test suite
 - Run `yarn build` if you change or add anything in `client/js` or `client/views`
 - `yarn dev` can be used to start irc.imperialfamily.com with hot module reloading
+
+## Fork/Custom edit of thelounge
+-- main focus is to work with jbnc, simply enter username and password and go. always on connection via jbnc
+## Demo
+- https://irc.imperialfamily.com
+
+## Install & Go:
+git clone https://github.com/toc-irc/thelounge.git
+cd /thelounge/client/img
+wget your .PNG and .SVG files of your org (or just 1 of each)
+ls -a 
+cp img.png's to the logos
+cp img.svg to the svg logos
+find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.imperialfamily.com/irc.yourorg.com/g'
+find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
