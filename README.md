@@ -46,6 +46,8 @@ Before submitting any change, make sure to:
  - git clone https://github.com/toc-irc/thelounge.git
  - cd /thelounge/
  - yarn install
+ - cd /thelounge/client
+ - put your favicon.ico in here
  - cd /thelounge/client/img
  - wget your .PNG and .SVG files of your org (or just 1 of each)
  - ls -a 
