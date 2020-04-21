@@ -94,11 +94,11 @@ Before submitting any change, make sure to:
 - https://irc.imperialfamily.com
 
 ## Install & Go:
-git clone https://github.com/toc-irc/thelounge.git
-cd /thelounge/client/img
-wget your .PNG and .SVG files of your org (or just 1 of each)
-ls -a 
-cp img.png's to the logos
-cp img.svg to the svg logos
-find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.imperialfamily.com/irc.yourorg.com/g'
-find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
+ - git clone https://github.com/toc-irc/thelounge.git
+ - cd /thelounge/client/img
+ - wget your .PNG and .SVG files of your org (or just 1 of each)
+ - ls -a 
+ - cp img.png's to the logos
+ - cp img.svg to the svg logos
+ - find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.imperialfamily.com/irc.yourorg.com/g'
+ - find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
