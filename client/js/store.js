@@ -31,6 +31,7 @@ const store = new Vuex.Store({
 		pushNotificationState: "unsupported",
 		serverConfiguration: null,
 		sessions: [],
+                bufferName: "default",
 		sidebarOpen: false,
 		sidebarDragging: false,
 		userlistOpen: storage.get("thelounge.state.userlist") !== "false",

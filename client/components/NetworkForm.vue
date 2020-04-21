@@ -178,11 +178,24 @@
 			</template>
 			<br />
 			<br />
-			<p>
+			<p style='display:block;padding:8px;border:1px solid #000;background-color:#232;color:#fff;'>
 				You can enter a new or existing nickname and password combination.<br />
 				<br />
-				If you're new, you'll be registered automagically! &#128512;
+				If you're new, you'll be registered automagically!<br />
+                                <br />
+                                Have fun! &#128512;
 			</p>
+			<p style='display:block;padding:8px;border:1px solid #000;background-color:#232;color:#fff;'>
+                                Advanced users can connect with your IRC client to:<br />
+                                irc.imperialfamily.com SSL port 9998<br /><br />
+                                Make sure your nickname and username are the same as your nickname above.
+                                You then simply need to use the same password as you input above and you're all set!
+                        </p>
+			<p style='display:block;padding:8px;'>
+                                <br /><br /><br /><br />
+                                <small>Your IP address will remain hidden to keep you pseudo-anonymous.</small><br />
+                                <small>Your connection will remain online.<br />To reconnect re-enter your nick/password.</small><br /><br />
+                        </p>
 		</form>
 	</div>
 </template>
@@ -242,6 +255,8 @@ export default {
 				data[item[0]] = item[1];
 			}
 
+                        // set buffer name for jbnc
+                        data.password=data.password+"/"+this.$store.state.bufferName;
 			this.handleSubmit(data);
 		},
 	},
