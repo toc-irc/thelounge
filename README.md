@@ -13,7 +13,7 @@ Please refer to the [install and upgrade documentation on our website](https://t
 The following commands install and run the development version of irc.imperialfamily.com:
 
 ```sh
-git clone https://github.com/thelounge/thelounge.git
+git clone https://github.com/toc-irc/thelounge.git
 cd thelounge
 yarn install
 NODE_ENV=production yarn build
