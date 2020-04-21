@@ -4,31 +4,7 @@ requires latest [Node.js](https://nodejs.org/) LTS version or more recent.
 [Yarn package manager](https://yarnpkg.com/) is also recommended.  
 If you want to install with npm, `--unsafe-perm` is required for a correct install.
 
-### Running stable releases
-
-Please refer to the [install and upgrade documentation on our website](https://thelounge.chat/docs/install-and-upgrade) for all available installation methods.
-
-### Running from source
-
-The following commands install and run the development version of irc.imperialfamily.com:
-
-```sh
-git clone https://github.com/toc-irc/thelounge.git
-cd thelounge
-yarn install
-NODE_ENV=production yarn build
-yarn start
-```
-
-When installed like this, `thelounge` executable is not created. Use `node index <command>` to run commands.
-
-⚠️ While it is the most recent codebase, this is not production-ready! Run at
-your own risk. It is also not recommended to run this as root.
-
 ## Development setup
-
-Simply follow the instructions to run irc.imperialfamily.com from source above, on your own
-fork.
 
 Before submitting any change, make sure to:
 
