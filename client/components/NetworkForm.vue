@@ -125,6 +125,7 @@
 						v-model="defaults.password"
 						class="input"
 						:type="slotProps.isVisible ? 'text' : 'password'"
+                                                pattern="[^\s:!@\/\|]+"
 						name="password"
 						required
 						placeholder="Enter a New or Existing Password"
