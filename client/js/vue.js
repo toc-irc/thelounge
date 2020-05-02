@@ -9,7 +9,6 @@ import App from "../components/App.vue";
 import storage from "./localStorage";
 import {router, navigate} from "./router";
 import socket from "./socket";
-
 import "./socket-events";
 import "./webpush";
 import "./keybinds";

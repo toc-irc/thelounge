@@ -3,6 +3,18 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
+                        <div style='position:absolute;right:0;top:0;' v-if="$store.state.networks.length == 0">
+                                        <router-link
+                                        to="/connect"
+                                        tag="button"
+                                        active-class="active"
+                                        :class="['icon', 'connect']"
+                                        aria-label="Connect to network"
+                                        role="tab"
+                                        aria-controls="connect"
+                                        :aria-selected="$route.name === 'Connect'">[x]</router-link>
+
+                        </div>
 		<form ref="settingsForm" class="container" @change="onChange" @submit.prevent>
 			<h1 class="title">Settings</h1>
 
@@ -478,6 +490,16 @@ This may break orientation if your browser does not support that."
 					:session="session"
 				/>
 			</div>
+                        <div v-if="$store.state.networks.length > 0 && $store.state.existingNick">
+                           <h2>Logout</h2>
+                           <button @click="doLogout">Logout</button>
+                           <br><small>You will remained logged into IRC.</small>
+                           <br>
+                           <br>
+                           <button @click="doLogoutIRC">Logout from IRC</button>
+                           <br><small>You will be disconnected from IRC.</small>
+                        </div>
+
 		</form>
 	</div>
 </template>
@@ -542,6 +564,20 @@ export default {
 			!this.$store.state.serverConfiguration.lockNetwork;
 	},
 	methods: {
+                doLogout(event) {
+                  document.cookie = 'jbnc.nick'+'=;';
+                  document.cookie = 'jbnc.password'+'=;';
+                  this.$store.state.existingNick=null;
+                  this.$store.state.existingPassword=null;
+                  location.replace("https://irc.imperialfamily.com");
+                },
+                doLogoutIRC(event) {
+                        socket.emit("input", {
+                                               target: this.$store.state.networks[0].channels[0].id,
+                                               text: "/jbnc quit",
+                                             });
+                        this.doLogout(event);
+                },
 		onChange(event) {
 			const ignore = ["old_password", "new_password", "verify_password"];
 

@@ -4,6 +4,7 @@ const constants = require("./constants");
 
 import Vue from "vue";
 import VueRouter from "vue-router";
+import storage from "./localStorage";
 
 Vue.use(VueRouter);
 
@@ -108,6 +109,7 @@ function initialize() {
     store.state.bufferName+='_ie';
   else
     store.state.bufferName+='_unknown';
+
 	router.addRoutes([
 		{
 			name: "Connect",

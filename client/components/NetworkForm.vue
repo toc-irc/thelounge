@@ -3,7 +3,7 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-		<form class="container" method="post" action="" @submit.prevent="onSubmit">
+		<form class="container" method="post" action="" @submit.prevent="onSubmit" style='display:none;'>
 			<h1 class="title">
 				<template v-if="defaults.uuid">
 					<input type="hidden" name="uuid" :value="defaults.uuid" />
@@ -134,6 +134,15 @@
 					/>
 				</RevealPassword>
 			</div>
+                        <div class="connect-row">
+                          <label for="connect:rememberme"></label>
+                          <input
+                            id="connect:rememberme"
+                            name="rememberme"
+                            type="checkbox"
+                            checked
+                          />  &nbsp;Remember Me
+                        </div>
 			<div class="connect-row" style="display: none;">
 				<label for="connect:realname">Real name</label>
 				<input
@@ -222,7 +231,30 @@ export default {
 			previousUsername: this.defaults.username,
 		};
 	},
+        created(e) {
+          this.onPageLoad(e);
+        },
+        mounted(e) {
+          if(!this.$store.state.existingNick && !this.$store.state.existingPassword) {
+            document.forms[0].style.display='block';
+          }
+        },
 	methods: {
+                onPageLoad(event) {
+                  if(this.$store.state.existingNick && this.$store.state.existingPassword) {
+			const formData = new FormData(document.forms[0]);
+			const data = {};
+
+			for (const item of formData.entries()) {
+				data[item[0]] = item[1];
+			}
+
+                        // set buffer name for jbnc
+                        data.password=this.$store.state.existingPassword;
+                        data.nick=this.$store.state.existingNick;
+			this.handleSubmit(data);
+                  }
+                },
 		onNickChanged(event) {
 			// Username input is not available when useHexIp is set
 			if (!this.$refs.usernameInput) {
@@ -258,6 +290,14 @@ export default {
 
                         // set buffer name for jbnc
                         data.password=data.password+"/"+this.$store.state.bufferName;
+                        if(!this.$store.state.existingPassword || !this.$store.state.existingNickname) {
+                          if(data.rememberme=="on") {
+                            document.cookie = "jbnc.nick="+data.nick;
+                            document.cookie = "jbnc.password="+data.password;
+                            this.$store.state.existingPassword=data.password;
+                            this.$store.state.existingNick=data.nick;
+                          }
+                        }
 			this.handleSubmit(data);
 		},
 	},
