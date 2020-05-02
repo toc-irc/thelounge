@@ -1,3 +1,6 @@
+## TOC-IRC
+Letstoc.com
+
 ## Installation and usage
 
 requires latest [Node.js](https://nodejs.org/) LTS version or more recent.
