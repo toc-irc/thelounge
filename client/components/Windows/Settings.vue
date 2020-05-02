@@ -490,6 +490,21 @@ This may break orientation if your browser does not support that."
 					:session="session"
 				/>
 			</div>
+                        <div v-if="$store.state.existingPassword.substr(0,$store.state.serverConfiguration.defaults.name.length) == $store.state.serverConfiguration.defaults.name">
+                        <h2>{{ $store.state.serverConfiguration.defaults.name }} Connection</h2>
+                            <label for='nick_user'>Nick/User</label>
+                            <input class="input"
+                                   name="nick_user"
+                                   type='text'
+                                   :value="$store.state.existingNick"
+                                   readonly />
+                            <label for='nick_password'>Password</label>
+                            <input class="input"
+                                   name="nick_password"
+                                   type='text'
+                                   :value="$store.state.existingPassword.split('/')[0]"
+                                   readonly />
+                        </div>
                         <div v-if="$store.state.networks.length > 0 && $store.state.existingNick">
                            <h2>Logout</h2>
                            <button @click="doLogout">Logout</button>

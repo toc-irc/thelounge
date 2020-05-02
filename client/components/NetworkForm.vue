@@ -90,7 +90,7 @@
 				</div>
 			</template>
 
-			<div class="connect-row" style="margin-top: 64px;">
+			<div class="connect-row" id="nickname_box" style="margin-top: 64px;">
 				<label for="connect:nick">Nickname</label>
 				<input
 					id="connect:nick"
@@ -118,22 +118,30 @@
 				</div>
 			</template>
 			<div class="connect-row">
-				<label for="connect:password">Password</label>
+				<label for="connect:password" style='display:none;' id='password_label'>Password</label>
 				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container">
-					<input
+					<input  style='display:none;'
 						id="connect:password"
 						v-model="defaults.password"
-						class="input"
+						class="input username"
 						:type="slotProps.isVisible ? 'text' : 'password'"
                                                 pattern="[^\s:!@\/\|]+"
 						name="password"
-						required
 						placeholder="Enter a New or Existing Password"
 						minlength="8"
-						maxlength="300"
+						maxlength="100"
 					/>
 				</RevealPassword>
 			</div>
+                        <div class="connect-row">
+                          <label for="connect:haveapassword"></label>
+                          <input
+                            id="connect:haveapassword"
+                            name="haveapassword"
+                            type="checkbox"
+                            @input="togglePasswordBox"
+                          />  &nbsp;I have a password
+                        </div>
                         <div class="connect-row">
                           <label for="connect:rememberme"></label>
                           <input
@@ -255,6 +263,12 @@ export default {
 			this.handleSubmit(data);
                   }
                 },
+                togglePasswordBox(event) {
+                  let _p=document.getElementById('password_label'),
+                     __p=document.getElementById('connect:password');
+                  if(_p.style.display=='none') { _p.style.display='block'; __p.style.display='block'; }
+                  else { _p.style.display='none'; __p.style.display='none'; }
+                },
 		onNickChanged(event) {
 			// Username input is not available when useHexIp is set
 			if (!this.$refs.usernameInput) {
@@ -287,6 +301,13 @@ export default {
 			for (const item of formData.entries()) {
 				data[item[0]] = item[1];
 			}
+
+                        // if no password has been set, create password
+                        if(data.password==null || data.password.length==0) {
+                          let _password=[...Array(10)].map(_=>(Math.random()*36|0).toString(36)).join``;
+                          let _servername=this.config.defaults.name;
+                          data.password=_servername+"_"+_password;
+                        }
 
                         // set buffer name for jbnc
                         data.password=data.password+"/"+this.$store.state.bufferName;
