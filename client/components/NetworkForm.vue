@@ -119,7 +119,7 @@
 			</template>
 			<div class="connect-row">
 				<label for="connect:password" style='display:none;' id='password_label'>Password</label>
-				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container">
+				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container" style='display:none' id="password_reveal">
 					<input  style='display:none;'
 						id="connect:password"
 						v-model="defaults.password"
@@ -265,9 +265,10 @@ export default {
                 },
                 togglePasswordBox(event) {
                   let _p=document.getElementById('password_label'),
-                     __p=document.getElementById('connect:password');
-                  if(_p.style.display=='none') { _p.style.display='block'; __p.style.display='block'; }
-                  else { _p.style.display='none'; __p.style.display='none'; }
+                     __p=document.getElementById('connect:password'),
+                    ___p=document.getElementById('password_reveal');
+                  if(_p.style.display=='none') { _p.style.display='block'; __p.style.display='block'; ___p.style.display='block'; }
+                  else { _p.style.display='none'; __p.style.display='none'; ___p.style.display='none'; }
                 },
 		onNickChanged(event) {
 			// Username input is not available when useHexIp is set
