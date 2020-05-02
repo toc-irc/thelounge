@@ -25,10 +25,28 @@ Before submitting any change, make sure to:
  - cd /thelounge/client
  - put your favicon.ico in here
  - cd /thelounge/client/img
- - wget your .PNG and .SVG files of your org (or just 1 of each)
- - ls -a 
- - cp img.png's to the logos
- - cp img.svg to the svg logos
+ - wget your .PNG and .SVG files of your org 
+ - mv IMAGE-YOU-DOWNLOADED.png chat.png
+ - mv IMAGE-YOU-DOWNLOADED.svg chat.svg
+ - cp chat.png icon-alerted-black-transparent-bg-72x72px.png
+- cp chat.png icon-alerted-grey-bg-192x192px.png
+- cp chat.png logo-grey-bg-120x120px.png
+- cp chat.png logo-grey-bg-152x152px.png
+- cp chat.png logo-grey-bg-167x167px.png
+- cp chat.png logo-grey-bg-180x180px.png
+- cp chat.png logo-grey-bg-192x192px.png
+- cp chat.png logo-grey-bg-512x512px.png
+
+- cp chat.svg icon-black-transparent-bg.svg
+- cp chat.svg logo-grey-bg.svg
+- cp chat.svg logo-horizontal-transparent-bg-inverted.svg
+- cp chat.svg logo-horizontal-transparent-bg.svg
+- cp chat.svg logo-transparent-bg-inverted.svg
+- cp chat.svg logo-transparent-bg.svg
+- cp chat.svg logo-vertical-transparent-bg-inverted.svg
+- cp chat.svg logo-vertical-transparent-bg.svg
+
+# Change the name of your webclient's irc server from imperialfamily to yours. Please cat README.md to get the commands right
  - find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.imperialfamily.com/irc.yourorg.com/g'
  - find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
  - cd to thelounge
