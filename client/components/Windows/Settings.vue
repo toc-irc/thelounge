@@ -490,7 +490,7 @@ This may break orientation if your browser does not support that."
 					:session="session"
 				/>
 			</div>
-                        <div v-if="$store.state.existingPassword.substr(0,$store.state.serverConfiguration.defaults.name.length) == $store.state.serverConfiguration.defaults.name">
+                        <div v-if="$store.state.existingPassword && $store.state.existingPassword.substr(0,$store.state.serverConfiguration.defaults.name.length) == $store.state.serverConfiguration.defaults.name">
                         <h2>{{ $store.state.serverConfiguration.defaults.name }} Connection</h2>
                             <label for='nick_user'>Nick/User</label>
                             <input class="input"
