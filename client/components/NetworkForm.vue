@@ -91,7 +91,7 @@
 			</template>
 
 			<div class="connect-row" id="nickname_box" style="margin-top: 64px;">
-				<label for="connect:nick">Choose a Nickname</label>
+				<label for="connect:nick">Nickname</label>
 				<input
 					id="connect:nick"
 					class="input nick"
