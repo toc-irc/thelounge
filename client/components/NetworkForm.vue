@@ -91,14 +91,14 @@
 			</template>
 
 			<div class="connect-row" id="nickname_box" style="margin-top: 64px;">
-				<label for="connect:nick">Nickname</label>
+				<label for="connect:nick">Choose a Nickname</label>
 				<input
 					id="connect:nick"
 					class="input nick"
 					name="nick"
 					pattern="[^\s:!@]+"
 					:value="defaults.nick"
-					placeholder="Enter a New or Existing Nickname"
+					placeholder="Enter a Nickname"
 					maxlength="100"
 					required
 					@input="onNickChanged"
@@ -127,7 +127,7 @@
 						:type="slotProps.isVisible ? 'text' : 'password'"
                                                 pattern="[^\s:!@\/\|]+"
 						name="password"
-						placeholder="Enter a New or Existing Password"
+						placeholder="Enter Password"
 						minlength="8"
 						maxlength="100"
 					/>
@@ -140,7 +140,7 @@
                             name="haveapassword"
                             type="checkbox"
                             @input="togglePasswordBox"
-                          />  &nbsp;I have a password
+                          />  &nbsp;Reconnect to an existing session
                         </div>
                         <div class="connect-row">
                           <label for="connect:rememberme"></label>
@@ -149,7 +149,7 @@
                             name="rememberme"
                             type="checkbox"
                             checked
-                          />  &nbsp;Remember Me
+                          />  &nbsp;Keep me connected
                         </div>
 			<div class="connect-row" style="display: none;">
 				<label for="connect:realname">Real name</label>
@@ -196,24 +196,6 @@
 			</template>
 			<br />
 			<br />
-			<p style='display:block;padding:8px;border:1px solid #000;background-color:#232;color:#fff;'>
-				You can enter a new or existing nickname and password combination.<br />
-				<br />
-				If you're new, you'll be registered automagically!<br />
-                                <br />
-                                Have fun! &#128512;
-			</p>
-			<p style='display:block;padding:8px;border:1px solid #000;background-color:#232;color:#fff;'>
-                                Advanced users can connect with your IRC client to:<br />
-                                irc.imperialfamily.com SSL port 9998<br /><br />
-                                Make sure your nickname and username are the same as your nickname above.
-                                You then simply need to use the same password as you input above and you're all set!
-                        </p>
-			<p style='display:block;padding:8px;'>
-                                <br /><br /><br /><br />
-                                <small>Your IP address will remain hidden to keep you pseudo-anonymous.</small><br />
-                                <small>Your connection will remain online.<br />To reconnect re-enter your nick/password.</small><br /><br />
-                        </p>
 		</form>
 	</div>
 </template>
