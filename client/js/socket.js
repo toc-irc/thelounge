@@ -6,7 +6,7 @@ const socket = io({
 	transports: JSON.parse(document.body.dataset.transports),
 	path: window.location.pathname + "socket.io/",
 	autoConnect: false,
-	reconnection: !document.body.classList.contains("public"),
+	reconnection: true
 });
 
 // Ease debugging socket during development

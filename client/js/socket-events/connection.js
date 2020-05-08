@@ -30,15 +30,6 @@ function handleDisconnect(data) {
 
 	store.commit("isConnected", false);
 
-	if (!socket.io.reconnection()) {
-		store.commit(
-			"currentUserVisibleError",
-			`Disconnected from the server (${message}), irc.imperialfamily.com does not reconnect in public mode.`
-		);
-		updateLoadingMessage();
-		return;
-	}
-
 	store.commit("currentUserVisibleError", `Waiting to reconnect… (${message})`);
 	updateLoadingMessage();
 
