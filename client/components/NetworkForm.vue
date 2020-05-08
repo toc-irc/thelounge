@@ -3,7 +3,7 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-		<form class="container" method="post" action="" @submit.prevent="onSubmit" style='display:none;'>
+		<form class="container" method="post" action="" style='display:none;' @submit.prevent="onSubmit">
 			<h1 class="title">
 				<template v-if="defaults.uuid">
 					<input type="hidden" name="uuid" :value="defaults.uuid" />
@@ -90,7 +90,7 @@
 				</div>
 			</template>
 
-			<div class="connect-row" id="nickname_box" style="margin-top: 64px;">
+			<div id="nickname_box" class="connect-row" style="margin-top: 64px;">
 				<label for="connect:nick">Nickname</label>
 				<input
 					id="connect:nick"
@@ -118,11 +118,11 @@
 				</div>
 			</template>
 			<div class="connect-row">
-				<label for="connect:password" style='display:none;' id='password_label'>Password</label>
-				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container" style='display:none' id="password_reveal">
-					<input  style='display:none;'
-						id="connect:password"
+				<label for="connect:password" id='password_label' style='display:none;'>Password</label>
+				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container" id='password_reveal' style='display:none;'>
+					<input  id="connect:password"
 						v-model="defaults.password"
+                                                style='display:none;'
 						class="input username"
 						:type="slotProps.isVisible ? 'text' : 'password'"
                                                 pattern="[^\s:!@\/\|]+"
@@ -221,16 +221,16 @@ export default {
 			previousUsername: this.defaults.username,
 		};
 	},
-        created(e) {
-          this.onPageLoad(e);
+        created() {
+          this.onPageLoad();
         },
-        mounted(e) {
+        mounted() {
           if(!this.$store.state.existingNick && !this.$store.state.existingPassword) {
             document.forms[0].style.display='block';
           }
         },
 	methods: {
-                onPageLoad(event) {
+                onPageLoad() {
                   if(this.$store.state.existingNick && this.$store.state.existingPassword) {
 			const formData = new FormData(document.forms[0]);
 			const data = {};
@@ -245,11 +245,12 @@ export default {
 			this.handleSubmit(data);
                   }
                 },
-                togglePasswordBox(event) {
-                  let _p=document.getElementById('password_label'),
+                togglePasswordBox() {
+                  const _p=document.getElementById('password_label'),
                      __p=document.getElementById('connect:password'),
                     ___p=document.getElementById('password_reveal');
-                  if(_p.style.display=='none') { _p.style.display='block'; __p.style.display='block'; ___p.style.display='block'; }
+
+                  if(_p.style.display==='none') { _p.style.display='block'; __p.style.display='block'; ___p.style.display='block'; }
                   else { _p.style.display='none'; __p.style.display='none'; ___p.style.display='none'; }
                 },
 		onNickChanged(event) {
@@ -286,22 +287,24 @@ export default {
 			}
 
                         // if no password has been set, create password
-                        if(data.password==null || data.password.length==0) {
-                          let _password=[...Array(10)].map(_=>(Math.random()*36|0).toString(36)).join``;
-                          let _servername=this.config.defaults.name;
+                        if(data.password==null || data.password.length===0) {
+                          const _password=[...Array(10)].map(_=>(Math.random()*36|0).toString(36)).join``;
+                          const _servername=this.config.defaults.name;
                           data.password=_servername+"_"+_password;
                         }
 
                         // set buffer name for jbnc
                         data.password=data.password+"/"+this.$store.state.bufferName;
+
                         if(!this.$store.state.existingPassword || !this.$store.state.existingNickname) {
-                          if(data.rememberme=="on") {
+                          if(data.rememberme==="on") {
                             document.cookie = "jbnc.nick="+data.nick;
                             document.cookie = "jbnc.password="+data.password;
                             this.$store.state.existingPassword=data.password;
                             this.$store.state.existingNick=data.nick;
                           }
                         }
+
 			this.handleSubmit(data);
 		},
 	},
