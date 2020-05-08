@@ -84,7 +84,23 @@ find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | x
 find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
 
 cd to thelounge
+
+# install themes
+
+node index.js install thelounge-theme-solarized
+
+node index.js install thelounge-theme-onedark
  
+# edit your config.js
+
+nano ~/.thelounge/config.js
+
+Set public to true, locknetwork to true, prefetch etc true,
+
+oirt 9998 with SSL for jbnc
+
+# Build and start. If you edit files, you can rebuild while running
+
 NODE_ENV=production yarn build
 
 yarn start / yarn start & for daemon mode
