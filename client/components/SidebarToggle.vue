@@ -4,8 +4,8 @@
 <script>
 export default {
 	name: "SidebarToggle",
-        mounted(e) {
-          if(this.$store.state.networks.length==0) {
+        mounted() {
+          if(this.$store.state.networks.length===0) {
             document.getElementById('hamburger').classList.add('quickshake');
           }
         }

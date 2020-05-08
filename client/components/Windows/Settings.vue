@@ -3,7 +3,7 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-                        <div style='position:absolute;right:0;top:0;' v-if="$store.state.networks.length == 0">
+                        <div v-if="$store.state.networks.length == 0" style='position:absolute;right:0;top:0;'>
                                         <router-link
                                         to="/connect"
                                         tag="button"
@@ -579,19 +579,19 @@ export default {
 			!this.$store.state.serverConfiguration.lockNetwork;
 	},
 	methods: {
-                doLogout(event) {
+                doLogout() {
                   document.cookie = 'jbnc.nick'+'=;';
                   document.cookie = 'jbnc.password'+'=;';
                   this.$store.state.existingNick=null;
                   this.$store.state.existingPassword=null;
                   location.replace("https://irc.imperialfamily.com");
                 },
-                doLogoutIRC(event) {
+                doLogoutIRC() {
                         socket.emit("input", {
                                                target: this.$store.state.networks[0].channels[0].id,
                                                text: "/jbnc quit",
                                              });
-                        this.doLogout(event);
+                        this.doLogout();
                 },
 		onChange(event) {
 			const ignore = ["old_password", "new_password", "verify_password"];

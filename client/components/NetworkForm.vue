@@ -118,8 +118,8 @@
 				</div>
 			</template>
 			<div class="connect-row">
-				<label for="connect:password" id='password_label' style='display:none;'>Password</label>
-				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container" id='password_reveal' style='display:none;'>
+				<label id='password_label' for="connect:password" style='display:none;'>Password</label>
+				<RevealPassword v-slot:default="slotProps" id='password_reveal' class="input-wrap password-container" style='display:none;'>
 					<input  id="connect:password"
 						v-model="defaults.password"
                                                 style='display:none;'
@@ -287,8 +287,8 @@ export default {
 			}
 
                         // if no password has been set, create password
-                        if(data.password==null || data.password.length===0) {
-                          const _password=[...Array(10)].map(_=>(Math.random()*36|0).toString(36)).join``;
+                        if(data.password===null || data.password.length===0) {
+                          const _password=[...Array(10)].map(() => Math.random().toString(36)[2]).join('')
                           const _servername=this.config.defaults.name;
                           data.password=_servername+"_"+_password;
                         }

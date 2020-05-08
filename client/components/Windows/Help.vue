@@ -3,7 +3,7 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-                        <div style='position:absolute;right:0;top:0;' v-if="$store.state.networks.length==0">
+                        <div v-if="$store.state.networks.length==0" style='position:absolute;right:0;top:0;'>
                                         <router-link
                                         to="/connect"
                                         tag="button"
@@ -691,13 +691,13 @@
 
 <script>
 import SidebarToggle from "../SidebarToggle.vue";
-import VersionChecker from "../VersionChecker.vue";
+//import VersionChecker from "../VersionChecker.vue";
 
 export default {
 	name: "Help",
 	components: {
 		SidebarToggle,
-		VersionChecker,
+//		VersionChecker,
 	},
 	data() {
 		return {
