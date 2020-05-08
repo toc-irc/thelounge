@@ -18,18 +18,22 @@ function detectDesktopNotificationState() {
 }
 
 function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
+	const nameEQ = name + "=";
+	const ca = document.cookie.split(";");
 
-    for(let i=0;i < ca.length;i++) {
-        let c = ca[i];
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i];
 
-        while (c.charAt(0)===' ') { c = c.substring(1,c.length); }
+		while (c.charAt(0) === " ") {
+			c = c.substring(1, c.length);
+		}
 
-        if (c.indexOf(nameEQ) === 0) { return c.substring(nameEQ.length,c.length); }
-    }
+		if (c.indexOf(nameEQ) === 0) {
+			return c.substring(nameEQ.length, c.length);
+		}
+	}
 
-    return null;
+	return null;
 }
 
 const store = new Vuex.Store({
@@ -46,12 +50,12 @@ const store = new Vuex.Store({
 		pushNotificationState: "unsupported",
 		serverConfiguration: null,
 		sessions: [],
-                bufferName: "default",
+		bufferName: "default",
 		sidebarOpen: false,
 		sidebarDragging: false,
 		userlistOpen: storage.get("thelounge.state.userlist") !== "false",
-                existingNick: getCookie('jbnc.nick'),
-                existingPassword: getCookie('jbnc.password'),
+		existingNick: getCookie("jbnc.nick"),
+		existingPassword: getCookie("jbnc.password"),
 		versionData: null,
 		versionStatus: "loading",
 		versionDataExpired: false,
