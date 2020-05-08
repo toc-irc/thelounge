@@ -115,9 +115,10 @@ function initialize() {
   {
     store.state.bufferName+='_ie';
   }
-  else if(store.state.bufferName.split("_").length!=3) {
+  else if(store.state.bufferName.split("_").length!==3) {
     store.state.bufferName+='_unknown';
   }
+
 	router.addRoutes([
 		{
 			name: "Connect",
