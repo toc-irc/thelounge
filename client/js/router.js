@@ -111,10 +111,11 @@ function initialize() {
   else if(navigator.userAgent.indexOf("Firefox") !== -1 ) {
     store.state.bufferName+='_firefox';
   }
-  else if((navigator.userAgent.indexOf("MSIE") !== -1 ) || (!!document.documentMode === true )) // IF IE > 10 {
+  else if((navigator.userAgent.indexOf("MSIE") !== -1 ) || (!!document.documentMode === true ))
+  {
     store.state.bufferName+='_ie';
   }
-  else {
+  else if(store.state.bufferName.split("_").length!=3) {
     store.state.bufferName+='_unknown';
   }
 	router.addRoutes([
