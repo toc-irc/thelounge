@@ -119,7 +119,7 @@
 			</template>
 			<div class="connect-row">
 				<label id='password_label' for="connect:password" style='display:none;'>Password</label>
-				<RevealPassword v-slot:default="slotProps" id='password_reveal' class="input-wrap password-container" style='display:none;'>
+				<RevealPassword id='password_reveal' v-slot:default="slotProps" class="input-wrap password-container" style='display:none;'>
 					<input  id="connect:password"
 						v-model="defaults.password"
                                                 style='display:none;'
