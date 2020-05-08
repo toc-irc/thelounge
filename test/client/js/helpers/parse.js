@@ -296,7 +296,7 @@ describe("IRC formatted message parser", () => {
 			name: "hex foreground and background colors",
 			input: "\x04415364,ff9e18irc.imperialfamily.com",
 			expected:
-				'<span style="color:#415364;background-color:#FF9E18;">irc.imperialfamily.com</span>',
+				'<a href="http://irc.imperialfamily.com" dir="auto" target="_blank" rel="noopener"><span style="color:#415364;background-color:#FF9E18;">irc.imperialfamily.com</span></a>',
 		},
 		{
 			name: "italic",
