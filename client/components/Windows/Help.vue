@@ -3,18 +3,19 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-                        <div style='position:absolute;right:0;top:0;' v-if="$store.state.networks.length==0">
-                                        <router-link
-                                        to="/connect"
-                                        tag="button"
-                                        active-class="active"
-                                        :class="['icon', 'connect']"
-                                        aria-label="Connect to network"
-                                        role="tab"
-                                        aria-controls="connect"
-                                        :aria-selected="$route.name === 'Connect'">[x]</router-link>
-
-                        </div>
+		<div v-if="$store.state.networks.length == 0" style="position: absolute; right: 0; top: 0;">
+			<router-link
+				to="/connect"
+				tag="button"
+				active-class="active"
+				:class="['icon', 'connect']"
+				aria-label="Connect to network"
+				role="tab"
+				aria-controls="connect"
+				:aria-selected="$route.name === 'Connect'"
+				>[x]</router-link
+			>
+		</div>
 		<div class="container">
 			<h1 class="title">Help</h1>
 
@@ -691,13 +692,13 @@
 
 <script>
 import SidebarToggle from "../SidebarToggle.vue";
-import VersionChecker from "../VersionChecker.vue";
+// import VersionChecker from "../VersionChecker.vue";
 
 export default {
 	name: "Help",
 	components: {
 		SidebarToggle,
-		VersionChecker,
+		//		VersionChecker,
 	},
 	data() {
 		return {

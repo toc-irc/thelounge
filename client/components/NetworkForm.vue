@@ -3,7 +3,13 @@
 		<div class="header">
 			<SidebarToggle />
 		</div>
-		<form class="container" method="post" action="" @submit.prevent="onSubmit" style='display:none;'>
+		<form
+			class="container"
+			method="post"
+			action=""
+			style="display: none;"
+			@submit.prevent="onSubmit"
+		>
 			<h1 class="title">
 				<template v-if="defaults.uuid">
 					<input type="hidden" name="uuid" :value="defaults.uuid" />
@@ -90,7 +96,7 @@
 				</div>
 			</template>
 
-			<div class="connect-row" id="nickname_box" style="margin-top: 64px;">
+			<div id="nickname_box" class="connect-row" style="margin-top: 64px;">
 				<label for="connect:nick">Nickname</label>
 				<input
 					id="connect:nick"
@@ -118,14 +124,22 @@
 				</div>
 			</template>
 			<div class="connect-row">
-				<label for="connect:password" style='display:none;' id='password_label'>Password</label>
-				<RevealPassword v-slot:default="slotProps" class="input-wrap password-container" style='display:none' id="password_reveal">
-					<input  style='display:none;'
+				<label id="password_label" for="connect:password" style="display: none;"
+					>Password</label
+				>
+				<RevealPassword
+					id="password_reveal"
+					v-slot:default="slotProps"
+					class="input-wrap password-container"
+					style="display: none;"
+				>
+					<input
 						id="connect:password"
 						v-model="defaults.password"
+						style="display: none;"
 						class="input username"
 						:type="slotProps.isVisible ? 'text' : 'password'"
-                                                pattern="[^\s:!@\/\|]+"
+						pattern="[^\s:!@\/\|]+"
 						name="password"
 						placeholder="Enter Password"
 						minlength="8"
@@ -133,24 +147,21 @@
 					/>
 				</RevealPassword>
 			</div>
-                        <div class="connect-row">
-                          <label for="connect:haveapassword"></label>
-                          <input
-                            id="connect:haveapassword"
-                            name="haveapassword"
-                            type="checkbox"
-                            @input="togglePasswordBox"
-                          />  &nbsp;Reconnect to an existing session
-                        </div>
-                        <div class="connect-row">
-                          <label for="connect:rememberme"></label>
-                          <input
-                            id="connect:rememberme"
-                            name="rememberme"
-                            type="checkbox"
-                            checked
-                          />  &nbsp;Keep me connected
-                        </div>
+			<div class="connect-row">
+				<label for="connect:haveapassword"></label>
+				<input
+					id="connect:haveapassword"
+					name="haveapassword"
+					type="checkbox"
+					@input="togglePasswordBox"
+				/>
+				&nbsp;Reconnect to an existing session
+			</div>
+			<div class="connect-row">
+				<label for="connect:rememberme"></label>
+				<input id="connect:rememberme" name="rememberme" type="checkbox" checked />
+				&nbsp;Keep me connected
+			</div>
 			<div class="connect-row" style="display: none;">
 				<label for="connect:realname">Real name</label>
 				<input
@@ -221,37 +232,45 @@ export default {
 			previousUsername: this.defaults.username,
 		};
 	},
-        created(e) {
-          this.onPageLoad(e);
-        },
-        mounted(e) {
-          if(!this.$store.state.existingNick && !this.$store.state.existingPassword) {
-            document.forms[0].style.display='block';
-          }
-        },
+	created() {
+		this.onPageLoad();
+	},
+	mounted() {
+		if (!this.$store.state.existingNick && !this.$store.state.existingPassword) {
+			document.forms[0].style.display = "block";
+		}
+	},
 	methods: {
-                onPageLoad(event) {
-                  if(this.$store.state.existingNick && this.$store.state.existingPassword) {
-			const formData = new FormData(document.forms[0]);
-			const data = {};
+		onPageLoad() {
+			if (this.$store.state.existingNick && this.$store.state.existingPassword) {
+				const formData = new FormData(document.forms[0]);
+				const data = {};
 
-			for (const item of formData.entries()) {
-				data[item[0]] = item[1];
+				for (const item of formData.entries()) {
+					data[item[0]] = item[1];
+				}
+
+				// set buffer name for jbnc
+				data.password = this.$store.state.existingPassword;
+				data.nick = this.$store.state.existingNick;
+				this.handleSubmit(data);
 			}
+		},
+		togglePasswordBox() {
+			const _p = document.getElementById("password_label"),
+				__p = document.getElementById("connect:password"),
+				___p = document.getElementById("password_reveal");
 
-                        // set buffer name for jbnc
-                        data.password=this.$store.state.existingPassword;
-                        data.nick=this.$store.state.existingNick;
-			this.handleSubmit(data);
-                  }
-                },
-                togglePasswordBox(event) {
-                  let _p=document.getElementById('password_label'),
-                     __p=document.getElementById('connect:password'),
-                    ___p=document.getElementById('password_reveal');
-                  if(_p.style.display=='none') { _p.style.display='block'; __p.style.display='block'; ___p.style.display='block'; }
-                  else { _p.style.display='none'; __p.style.display='none'; ___p.style.display='none'; }
-                },
+			if (_p.style.display === "none") {
+				_p.style.display = "block";
+				__p.style.display = "block";
+				___p.style.display = "block";
+			} else {
+				_p.style.display = "none";
+				__p.style.display = "none";
+				___p.style.display = "none";
+			}
+		},
 		onNickChanged(event) {
 			// Username input is not available when useHexIp is set
 			if (!this.$refs.usernameInput) {
@@ -285,23 +304,25 @@ export default {
 				data[item[0]] = item[1];
 			}
 
-                        // if no password has been set, create password
-                        if(data.password==null || data.password.length==0) {
-                          let _password=[...Array(10)].map(_=>(Math.random()*36|0).toString(36)).join``;
-                          let _servername=this.config.defaults.name;
-                          data.password=_servername+"_"+_password;
-                        }
+			// if no password has been set, create password
+			if (data.password === null || data.password.length === 0) {
+				const _password = [...Array(10)].map(() => Math.random().toString(36)[2]).join("");
+				const _servername = this.config.defaults.name;
+				data.password = _servername + "_" + _password;
+			}
 
-                        // set buffer name for jbnc
-                        data.password=data.password+"/"+this.$store.state.bufferName;
-                        if(!this.$store.state.existingPassword || !this.$store.state.existingNickname) {
-                          if(data.rememberme=="on") {
-                            document.cookie = "jbnc.nick="+data.nick;
-                            document.cookie = "jbnc.password="+data.password;
-                            this.$store.state.existingPassword=data.password;
-                            this.$store.state.existingNick=data.nick;
-                          }
-                        }
+			// set buffer name for jbnc
+			data.password = data.password + "/" + this.$store.state.bufferName;
+
+			if (!this.$store.state.existingPassword || !this.$store.state.existingNickname) {
+				if (data.rememberme === "on") {
+					document.cookie = "jbnc.nick=" + data.nick;
+					document.cookie = "jbnc.password=" + data.password;
+					this.$store.state.existingPassword = data.password;
+					this.$store.state.existingNick = data.nick;
+				}
+			}
+
 			this.handleSubmit(data);
 		},
 	},
