@@ -16,7 +16,7 @@ module.exports = {
 	//   channels and scrollbacks are available when they come back.
 	//
 	// This value is set to `false` by default.
-	public: false,
+	public: true,
 
 	// ### `host`
 	//
@@ -108,7 +108,7 @@ module.exports = {
 	// from URLs posted in channels and private messages.
 	//
 	// This value is set to `false` by default.
-	prefetch: false,
+	prefetch: true,
 
 	// ### `prefetchStorage`
 
@@ -128,7 +128,7 @@ module.exports = {
 	// restarts.
 	//
 	// This value is set to `false` by default.
-	prefetchStorage: false,
+	prefetchStorage: true,
 
 	// ### `prefetchMaxImageSize`
 	//
@@ -136,7 +136,7 @@ module.exports = {
 	// size does not exceed this limit.
 	//
 	// This value is set to `2048` kilobytes by default.
-	prefetchMaxImageSize: 2048,
+	prefetchMaxImageSize: 3048,
 
 	// ### `fileUpload`
 	//
@@ -180,7 +180,7 @@ module.exports = {
 	//
 	// This value is set to `"irc.imperialfamily.com - https://thelounge.chat"` by
 	// default.
-	leaveMessage: "irc.imperialfamily.com - https://thelounge.chat",
+	leaveMessage: "bye!",
 
 	// ## Default network
 
@@ -226,16 +226,16 @@ module.exports = {
 	// }
 	// ```
 	defaults: {
-		name: "Freenode",
-		host: "chat.freenode.net",
-		port: 6697,
+		name: "Chat",
+		host: "127.0.0.1",
+		port: 9998,
 		password: "",
 		tls: true,
 		rejectUnauthorized: true,
-		nick: "dnslive%%",
-		username: "thelounge",
-		realname: "irc.imperialfamily.com User",
-		join: "#thelounge",
+		nick: "",
+		username: "",
+		realname: "webchat User",
+		join: "#lobby",
 	},
 
 	// ### `displayNetwork`
@@ -248,7 +248,7 @@ module.exports = {
 	// `lockNetwork` setting to restrict users from connecting to other networks.
 	//
 	// This value is set to `true` by default.
-	displayNetwork: true,
+	displayNetwork: false,
 
 	// ### `lockNetwork`
 	//
@@ -259,7 +259,7 @@ module.exports = {
 	// Lounge as a public web client for a specific IRC network.
 	//
 	// This value is set to `false` by default.
-	lockNetwork: false,
+	lockNetwork: true,
 
 	// ## User management
 
@@ -326,7 +326,9 @@ module.exports = {
 	//   ```
 	//
 	// This value is set to `null` to disable WEBIRC by default.
-	webirc: null,
+	webirc: {
+          "127.0.0.1": "webircpass",
+        },
 
 	// ## identd and oidentd support
 
