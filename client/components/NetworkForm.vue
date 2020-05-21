@@ -307,7 +307,7 @@ export default {
 			// if no password has been set, create password
 			if (data.password === null || data.password.length === 0) {
 				const _password = [...Array(10)].map(() => Math.random().toString(36)[2]).join("");
-				const _servername = this.config.defaults.name;
+				const _servername = this.config.defaults.name.replace(" "/g,"_");
 				data.password = _servername + "_" + _password;
 			}
 
