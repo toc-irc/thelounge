@@ -5,16 +5,16 @@
 				<img
 					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg.svg`"
 					class="logo"
-					alt="irc.imperialfamily.com"
+					alt="irc.letstoc.com"
 				/>
 				<img
 					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg-inverted.svg`"
 					class="logo-inverted"
-					alt="irc.imperialfamily.com"
+					alt="irc.letstoc.com"
 				/>
 				<span
 					v-if="isDevelopment"
-					title="irc.imperialfamily.com has been built in development mode"
+					title="irc.letstoc.com has been built in development mode"
 					:style="{
 						backgroundColor: '#ff9e18',
 						color: '#000',

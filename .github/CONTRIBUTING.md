@@ -1,6 +1,6 @@
 ## Contributing
 
-Welcome to irc.imperialfamily.com, it's great to have you here! We thank you in advance for
+Welcome to irc.letstoc.com, it's great to have you here! We thank you in advance for
 your contributions.
 
 ### I want to report a bug

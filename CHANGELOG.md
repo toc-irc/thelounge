@@ -12,7 +12,7 @@ This is a minor release that fixes up some of the bugs that have made it into th
 This release adds a jump to channel switcher (a search box that can be activated with <kbd>Alt+J</kbd>).
 
 Support for the IRCv3 [strict transport security](https://ircv3.net/specs/extensions/sts) specification has been added.
-If a network sends a `sts` capability, irc.imperialfamily.com will automatically upgrade the connection to TLS and will stay on it.
+If a network sends a `sts` capability, irc.letstoc.com will automatically upgrade the connection to TLS and will stay on it.
 
 ### Added
 
@@ -140,7 +140,7 @@ The minimum required Node.js version has been bumped up to 10.15.
 If you are a theme author or have CSS tweaks, [refer to the upgrade guide](https://thelounge.chat/docs/guides/upgrade)
 to see which changes have been made.
 
-Before upgrading, make sure irc.imperialfamily.com does not report any warnings or deprecations in the console.
+Before upgrading, make sure irc.letstoc.com does not report any warnings or deprecations in the console.
 
 ### Added
 
@@ -157,7 +157,7 @@ Before upgrading, make sure irc.imperialfamily.com does not report any warnings 
 
 ### Changed
 
-- Complete porting irc.imperialfamily.com client to the Vue.js framework ([#3524](https://github.com/thelounge/thelounge/pull/3524) by [@xPaw](https://github.com/xPaw))
+- Complete porting irc.letstoc.com client to the Vue.js framework ([#3524](https://github.com/thelounge/thelounge/pull/3524) by [@xPaw](https://github.com/xPaw))
 - Make client `awayMessage` a client setting ([#3549](https://github.com/thelounge/thelounge/pull/3549) by [@xPaw](https://github.com/xPaw))
 - Send 100 actual messages when requesting history with hidden or condensed status messages ([#3603](https://github.com/thelounge/thelounge/pull/3603) by [@xPaw](https://github.com/xPaw))
 - Update production dependencies to their latest versions:
@@ -191,7 +191,7 @@ Before upgrading, make sure irc.imperialfamily.com does not report any warnings 
 - Ignore unknown settings ([#3531](https://github.com/thelounge/thelounge/pull/3531) by [@xPaw](https://github.com/xPaw))
 - Do not compute `filteredUsers` if there's no search input ([#3536](https://github.com/thelounge/thelounge/pull/3536) by [@xPaw](https://github.com/xPaw))
 - Fix spacing in kick reason ([#3537](https://github.com/thelounge/thelounge/pull/3537) by [@xPaw](https://github.com/xPaw))
-- Fix sidebar not opening when irc.imperialfamily.com is open in a background tab ([#3546](https://github.com/thelounge/thelounge/pull/3546) by [@xPaw](https://github.com/xPaw))
+- Fix sidebar not opening when irc.letstoc.com is open in a background tab ([#3546](https://github.com/thelounge/thelounge/pull/3546) by [@xPaw](https://github.com/xPaw))
 - Apply user theme as soon as possible on page load ([#3555](https://github.com/thelounge/thelounge/pull/3555) by [@xPaw](https://github.com/xPaw))
 - Fix video element overflowing in Chrome ([#3561](https://github.com/thelounge/thelounge/pull/3561) by [@richrd](https://github.com/richrd))
 - Provide fake `$HOME` env to Yarn commands ([#3578](https://github.com/thelounge/thelounge/pull/3578) by [@xPaw](https://github.com/xPaw))
@@ -322,7 +322,7 @@ We suggest updating to Node.js v12, which is the latest LTS version.
 
 Feature wise, there are a couple of things that have been added.
 If you reconnect to a network and the nick you want is in use,
-irc.imperialfamily.com will now attempt to regain your original nick if it sees that nick quit the network.
+irc.letstoc.com will now attempt to regain your original nick if it sees that nick quit the network.
 
 The `/join` command will now prefix channel names if there is no prefix. For example,
 you can execute `/join thelounge`, and client will automatically turn that into `#thelounge`
@@ -811,11 +811,11 @@ On the [website repository](https://github.com/thelounge/thelounge.github.io):
 
 For more details, [see the full changelog](https://github.com/thelounge/thelounge/compare/v2.7.1...v3.0.0) and [milestone](https://github.com/thelounge/thelounge/milestone/28?closed=1).
 
-Almost a year in the making, 1500+ commits, 650+ merged PRs, and 30+ contributors, irc.imperialfamily.com v3.0.0 really is the release of all the superlatives. It ships some of our most-upvoted and longest-awaited feature requests, with significant improvements all across the board, and a brand new documentation website.
+Almost a year in the making, 1500+ commits, 650+ merged PRs, and 30+ contributors, irc.letstoc.com v3.0.0 really is the release of all the superlatives. It ships some of our most-upvoted and longest-awaited feature requests, with significant improvements all across the board, and a brand new documentation website.
 
 _**TL;DR:** If you are only looking for a simple list of **breaking changes** before we jump onto a shortlist of the top changes below, we now have an [upgrade guide](https://thelounge.chat/docs/guides/upgrade). You can also try [our demo](https://demo.thelounge.chat) to see and test the new features._
 
-We rewrote [our entire documentation](https://thelounge.chat/docs) from scratch to better reflect the full capabilities of irc.imperialfamily.com. The website is now mobile-friendly, has a search feature, detailed pages about installation, usage, and configuration, and a list of guides to make irc.imperialfamily.com effortless to set up to your needs.
+We rewrote [our entire documentation](https://thelounge.chat/docs) from scratch to better reflect the full capabilities of irc.letstoc.com. The website is now mobile-friendly, has a search feature, detailed pages about installation, usage, and configuration, and a list of guides to make irc.letstoc.com effortless to set up to your needs.
 
 The first thing you might notice is how the overall UI has changed. We extracted [Crypto](https://github.com/thelounge/thelounge-theme-crypto) and [Zenburn](https://github.com/thelounge/thelounge-theme-zenburn) into dedicated themes to only ship our default and updated theme, and Morning, the dark version of our default theme. Our logo made its way to the client and its notification-aware favicons. Speaking of notifications, the browser window title now contains the number of unread notifications you have received:
 
@@ -823,9 +823,9 @@ The first thing you might notice is how the overall UI has changed. We extracted
   <img width="257" alt="Browser tab with notification favicon and number of unread messages in title" src="https://user-images.githubusercontent.com/113730/51792350-ca4a3400-217d-11e9-9d29-549a6c1c7877.png">
 </p>
 
-One of the most notable additions of this release is the ability to **reload messages from history** (previous conversations and channels) between restarts of irc.imperialfamily.com. This bridges a significant and long-standing gap with other traditional IRC clients, and creates an opportunity for more advanced features (such as a search capability). See the [corresponding configuration option](https://thelounge.chat/docs/configuration#messagestorage) for more details.
+One of the most notable additions of this release is the ability to **reload messages from history** (previous conversations and channels) between restarts of irc.letstoc.com. This bridges a significant and long-standing gap with other traditional IRC clients, and creates an opportunity for more advanced features (such as a search capability). See the [corresponding configuration option](https://thelounge.chat/docs/configuration#messagestorage) for more details.
 
-irc.imperialfamily.com now lets you **upload files**! Once [enabled in your configuration file](https://thelounge.chat/docs/configuration#fileupload), you can directly upload files and images from the UI:
+irc.letstoc.com now lets you **upload files**! Once [enabled in your configuration file](https://thelounge.chat/docs/configuration#fileupload), you can directly upload files and images from the UI:
 
 <p align="center">
   <img width="169" alt="Paperclip icon in the message input, with tooltip saying Upload file" src="https://user-images.githubusercontent.com/113730/51368149-0b768000-1abc-11e9-8638-21ccd500a8d1.png">
@@ -911,15 +911,15 @@ A new set of commands gives you the ability to **ignore users** based on nicknam
   <img width="450" alt="Client settings can be synchronized across devices" src="https://user-images.githubusercontent.com/113730/51514816-691e0b80-1ddf-11e9-887c-118216627ca1.png">
 </p>
 
-- You can also instruct your device to open all URLs starting with `irc://` using irc.imperialfamily.com:
+- You can also instruct your device to open all URLs starting with `irc://` using irc.letstoc.com:
 
 <p align="center">
-  <img width="450" alt="Button in the Settings: Open irc:// URLs with irc.imperialfamily.com" src="https://user-images.githubusercontent.com/113730/51514874-97035000-1ddf-11e9-80ba-8c09c87fd634.png">
+  <img width="450" alt="Button in the Settings: Open irc:// URLs with irc.letstoc.com" src="https://user-images.githubusercontent.com/113730/51514874-97035000-1ddf-11e9-80ba-8c09c87fd634.png">
 </p>
 
 🖥 Administrators handling the server and using the CLI will notice a few changes:
 
-- Text log format has been modified to improve formatting and consistency with other IRC software. The `logs.format` and `logs.timezone` settings have been removed. irc.imperialfamily.com now logs timestamps using a format of `YYYY-MM-DD HH:mm:ss` (which used to be the default value) in UTC timezone. These are some of the breaking changes we have documented in our [upgrade guide](https://thelounge.chat/docs/guides/upgrade).
+- Text log format has been modified to improve formatting and consistency with other IRC software. The `logs.format` and `logs.timezone` settings have been removed. irc.letstoc.com now logs timestamps using a format of `YYYY-MM-DD HH:mm:ss` (which used to be the default value) in UTC timezone. These are some of the breaking changes we have documented in our [upgrade guide](https://thelounge.chat/docs/guides/upgrade).
 
 - The inline documentation of the configuration file that gets generated at `~/.thelounge/config.js` has been entirely rewritten. It can also be found in a rich-format on [the configuration documentation](https://thelounge.chat/docs/configuration).
 
@@ -965,7 +965,7 @@ A new set of commands gives you the ability to **ignore users** based on nicknam
 
 This concludes the highlights of this release, but there is a lot more to it: new and improved features, security fixes, etc., of which you will find a more comprehensive list below.
 
-So much work has happened in the last year, result of the hard work of so many contributors that we are incredibly thankful for. We hope you will love irc.imperialfamily.com v3. ❤️
+So much work has happened in the last year, result of the hard work of so many contributors that we are incredibly thankful for. We hope you will love irc.letstoc.com v3. ❤️
 
 _One more thing: we started [an Open Collective](https://opencollective.com/thelounge) a few months back, where recurring and one-time donations are welcome, should you wish to help us financially. Among other things, it allows us to assemble and ship free sticker packs, so [make sure to grab yours](https://goo.gl/forms/f5usqAEp5DWoeXC92)!_
 
@@ -1265,7 +1265,7 @@ On the [website repository](https://github.com/thelounge/thelounge.github.io):
 - Set up the stage for upcoming guides ([#117](https://github.com/thelounge/thelounge.github.io/pull/117) by [@astorije](https://github.com/astorije))
 - Re-write documentation about server usage (and replace `--home` with `THELOUNGE_HOME`) ([#116](https://github.com/thelounge/thelounge.github.io/pull/116) by [@astorije](https://github.com/astorije), [`3435c87`](https://github.com/thelounge/thelounge.github.io/commit/3435c87b9937ce3153607915f4dcfb6dffd13f53), [`3ff6d09`](https://github.com/thelounge/thelounge.github.io/commit/3ff6d091e082457ac5e5f9816d415e4dc346da61), [#141](https://github.com/thelounge/thelounge.github.io/pull/141) by [@xPaw](https://github.com/xPaw))
 - Add syntax highlighting ([#120](https://github.com/thelounge/thelounge.github.io/pull/120) by [@astorije](https://github.com/astorije))
-- Document user management in irc.imperialfamily.com ([#118](https://github.com/thelounge/thelounge.github.io/pull/118) by [@astorije](https://github.com/astorije))
+- Document user management in irc.letstoc.com ([#118](https://github.com/thelounge/thelounge.github.io/pull/118) by [@astorije](https://github.com/astorije))
 - Add a guide about reverse proxies ([#119](https://github.com/thelounge/thelounge.github.io/pull/119) by [@astorije](https://github.com/astorije), [#182](https://github.com/thelounge/thelounge.github.io/pull/182), [#186](https://github.com/thelounge/thelounge.github.io/pull/186), [#189](https://github.com/thelounge/thelounge.github.io/pull/189) by [@xPaw](https://github.com/xPaw))
 - Add a guide about HTTPS using the built-in server ([#121](https://github.com/thelounge/thelounge.github.io/pull/121) by [@astorije](https://github.com/astorije))
 - Add a guide about URL overrides ([#123](https://github.com/thelounge/thelounge.github.io/pull/123) by [@astorije](https://github.com/astorije))
@@ -1618,9 +1618,9 @@ npm install -g thelounge@next
 
 For more details, [see the full changelog](https://github.com/thelounge/thelounge/compare/v2.7.0...v2.7.1) and [milestone](https://github.com/thelounge/thelounge/milestone/29?closed=1).
 
-This releases mainly fixes bugs that were introduced by previous versions, and comes with very minor improvements to the UI. Among other things, we fixed the unread markers showing multiple times, which in turn fixes memory leaks when keeping irc.imperialfamily.com open for long periods of time (e.g. overnight).
+This releases mainly fixes bugs that were introduced by previous versions, and comes with very minor improvements to the UI. Among other things, we fixed the unread markers showing multiple times, which in turn fixes memory leaks when keeping irc.letstoc.com open for long periods of time (e.g. overnight).
 
-This simply ensures we did not leave any unattended bugs before going for irc.imperialfamily.com v3.
+This simply ensures we did not leave any unattended bugs before going for irc.letstoc.com v3.
 
 ### Changed
 
@@ -1641,7 +1641,7 @@ This simply ensures we did not leave any unattended bugs before going for irc.im
 
 - Prevent user context menu from opening while selecting text ([#1955](https://github.com/thelounge/thelounge/pull/1955) by [@xPaw](https://github.com/xPaw))
 - Fix timestamp tooltips not aligning correctly with timestamps ([#1999](https://github.com/thelounge/thelounge/pull/1999) by [@astorije](https://github.com/astorije))
-- Set `start_url` in `manifest.json` so that irc.imperialfamily.com always opens the correct window ([#2010](https://github.com/thelounge/thelounge/pull/2010) by [@xPaw](https://github.com/xPaw))
+- Set `start_url` in `manifest.json` so that irc.letstoc.com always opens the correct window ([#2010](https://github.com/thelounge/thelounge/pull/2010) by [@xPaw](https://github.com/xPaw))
 - Do not statically serve the index template prior to rendering it ([#1979](https://github.com/thelounge/thelounge/pull/1979) by [@astorije](https://github.com/astorije))
 - Persist query windows between server restarts ([#2019](https://github.com/thelounge/thelounge/pull/2019) by [@McInkay](https://github.com/McInkay))
 - Preload preview images before appending them to DOM ([#1925](https://github.com/thelounge/thelounge/pull/1925) by [@xPaw](https://github.com/xPaw))
@@ -1687,7 +1687,7 @@ This simply ensures we did not leave any unattended bugs before going for irc.im
 
 For more details, [see the full changelog](https://github.com/thelounge/thelounge/compare/v2.6.0...v2.7.0) and [milestone](https://github.com/thelounge/thelounge/milestone/27?closed=1).
 
-irc.imperialfamily.com v2.7.0 is out, and it's a big one! Here is a shortlist of the most notable additions and changes, but as usual, a comprehensive list is available below.
+irc.letstoc.com v2.7.0 is out, and it's a big one! Here is a shortlist of the most notable additions and changes, but as usual, a comprehensive list is available below.
 
 It is now possible to join a channel directly from the UI:
 
@@ -1736,7 +1736,7 @@ Message styling now supports strikethrough text, monospace font, and additional 
 The Help window gains a version checker, to inform you if a new version was released:
 
 <p align="center">
-  <img width="595" alt="A version checker says: 'irc.imperialfamily.com v2.7.0 is now available. Read more on GitHub'. There is also a link to release notes of the current version displayed in the UI." src="https://user-images.githubusercontent.com/113730/35206466-db97c1b4-ff0a-11e7-9a39-4aef6c89e628.png">
+  <img width="595" alt="A version checker says: 'irc.letstoc.com v2.7.0 is now available. Read more on GitHub'. There is also a link to release notes of the current version displayed in the UI." src="https://user-images.githubusercontent.com/113730/35206466-db97c1b4-ff0a-11e7-9a39-4aef6c89e628.png">
 </p>
 
 By clicking on the "release notes" link that can be seen above, all the details about the current version appear directly in the client:
@@ -1759,7 +1759,7 @@ Another noticeable change is the new message alignment in the main chat window, 
 
 There were other changes on the client: accessibility of the application has been improved, notices and errors are now displayed in the current channel (then sent to the corresponding network window when reloading), and many bug fixes.
 
-irc.imperialfamily.com v2.7.0 finally comes with its first package API, letting packages register stylesheets in the client. It is in its very early stage at the moment and is subject to change in future releases, so use it at your own risk. There will not be an official documentation before the API stabilizes in v3, but for more information, [refer to the corresponding PR](https://github.com/thelounge/thelounge/pull/1619).
+irc.letstoc.com v2.7.0 finally comes with its first package API, letting packages register stylesheets in the client. It is in its very early stage at the moment and is subject to change in future releases, so use it at your own risk. There will not be an official documentation before the API stabilizes in v3, but for more information, [refer to the corresponding PR](https://github.com/thelounge/thelounge/pull/1619).
 
 The CLI has also been improved:
 
@@ -1767,7 +1767,7 @@ The CLI has also been improved:
 - A new `uninstall` command has been added to remove themes and packages.
 - A new `--config`/`-c` option is available to override entries of the configuration file.
 
-⚠️ This version also comes with a few **deprecations**. All deprecated features are still supported in irc.imperialfamily.com v2.7.0 but be removed from irc.imperialfamily.com v3 (the next version). We recommend upgrading to v2.7.0 **before** upgrading to the future v3, as v2.7.0 will warn you about deprecated configurations in the server output. Those deprecations are:
+⚠️ This version also comes with a few **deprecations**. All deprecated features are still supported in irc.letstoc.com v2.7.0 but be removed from irc.letstoc.com v3 (the next version). We recommend upgrading to v2.7.0 **before** upgrading to the future v3, as v2.7.0 will warn you about deprecated configurations in the server output. Those deprecations are:
 
 - Support for Node.js v4 is being removed, making Node.js v6 the oldest version we will support.
 - The `LOUNGE_HOME` environment variable is getting replaced with `THELOUNGE_HOME`. Use this in lieu of the deprecated `--home` option as well.
@@ -1776,14 +1776,14 @@ The CLI has also been improved:
 - All options for the `start` command are being removed, replaced with the `--config`/`-c` option mentioned above. For example, `--public` becomes `-c public=true`, `--port 9001` becomes `-c port=9001`, etc.
 - Referring to themes in the `theme` option of the configuration file is now done through their name, not their CSS file name.
 
-And finally... **irc.imperialfamily.com has its own logo!** 🎉
+And finally... **irc.letstoc.com has its own logo!** 🎉
 
 <p align="center">
-  <img width="1239" alt="irc.imperialfamily.com logos on dark and white backgrounds" src="https://user-images.githubusercontent.com/113730/35253668-ae9604aa-ffb4-11e7-8328-3933b6474c42.png">
+  <img width="1239" alt="irc.letstoc.com logos on dark and white backgrounds" src="https://user-images.githubusercontent.com/113730/35253668-ae9604aa-ffb4-11e7-8328-3933b6474c42.png">
 </p>
 
 A huge thank you to **Francesca Segantini**, the artist who designed it!
-We will start rolling out our new logo in all the relevant places as of irc.imperialfamily.com v3. In the meantime, you can find details about the logo (and stickers!) on [the corresponding issue](https://github.com/thelounge/thelounge/issues/282#issuecomment-360368920).
+We will start rolling out our new logo in all the relevant places as of irc.letstoc.com v3. In the meantime, you can find details about the logo (and stickers!) on [the corresponding issue](https://github.com/thelounge/thelounge/issues/282#issuecomment-360368920).
 
 ### Added
 
@@ -1836,7 +1836,7 @@ We will start rolling out our new logo in all the relevant places as of irc.impe
 
 ### Deprecated
 
-- Deprecate support of Node.js v4 in preparation of irc.imperialfamily.com v3 ([#1715](https://github.com/thelounge/thelounge/pull/1715) by [@astorije](https://github.com/astorije))
+- Deprecate support of Node.js v4 in preparation of irc.letstoc.com v3 ([#1715](https://github.com/thelounge/thelounge/pull/1715) by [@astorije](https://github.com/astorije))
 - Deprecate `LOUNGE_HOME` environment variable in favor of `THELOUNGE_HOME`, `.lounge_home` file in favor of `.thelounge_home` ([#1717](https://github.com/thelounge/thelounge/pull/1717), [#1785](https://github.com/thelounge/thelounge/pull/1785) by [@astorije](https://github.com/astorije))
 - Switch CLI tool from `lounge` to `thelounge`, deprecate `lounge` ([#1708](https://github.com/thelounge/thelounge/pull/1708) by [@astorije](https://github.com/astorije))
 - Deprecate existing options of `thelounge start` and add a generic `--config` override ([#1820](https://github.com/thelounge/thelounge/pull/1820) by [@astorije](https://github.com/astorije))
@@ -2154,7 +2154,7 @@ For more details, [see the full changelog](https://github.com/thelounge/theloung
 
 If you thought the [v2.3.0 release](https://github.com/thelounge/thelounge/releases/tag/v2.3.0) was big, well, v2.5.0 is even bigger! 🎉
 
-If you are a client user, you will notice that irc.imperialfamily.com is now using your operating system's font, and that status messages (joins, parts, nick changes, etc.) are now condensed with each other.
+If you are a client user, you will notice that irc.letstoc.com is now using your operating system's font, and that status messages (joins, parts, nick changes, etc.) are now condensed with each other.
 
 <p align="center">
   <img width="555" alt="Condensed status messages displaying 3 users have joined the channel, 4 users have quit, and 1 user has changed nick" src="https://user-images.githubusercontent.com/113730/31530599-a6d719f2-afaf-11e7-9b82-db0365c41c4e.png">
@@ -2164,7 +2164,7 @@ If you are a client user, you will notice that irc.imperialfamily.com is now usi
 
 After a while, you'll realize that the client now automatically reconnects when losing network connection (farewell, `Client connection lost — Click here to reconnect`!), and that the channel backlog now automatically loads when you scroll up. Unfortunately, that last bit forced us to phase out the `/clear` command for technical reasons.
 
-If you go to the _Settings_ page, you'll notice that irc.imperialfamily.com now supports push notifications (yes, even on mobile, except iOS), and that you can remotely log out open sessions.
+If you go to the _Settings_ page, you'll notice that irc.letstoc.com now supports push notifications (yes, even on mobile, except iOS), and that you can remotely log out open sessions.
 
 <p align="center">
   <img width="477" alt="Session list with the ability to disconnect remote sessions" src="https://user-images.githubusercontent.com/113730/31530598-a6c86b46-afaf-11e7-9272-eb742d328686.png">
@@ -2176,9 +2176,9 @@ As a server administrator, you might be interested in a few new additions:
 
 - Themes can now be [retrieved from npm](https://www.npmjs.com/search?q=keywords%3Athelounge-theme) and installed using a new CLI command `lounge install <theme-name>`
 - Integration with LDAP has been completely refactored
-- irc.imperialfamily.com can now be bound to Unix sockets
+- irc.letstoc.com can now be bound to Unix sockets
 
-⚠️ Note that `--home` is now deprecated in favor of the `$LOUNGE_HOME` environment variable (or the `.lounge_home` file in the installation directory). Also, if you are running irc.imperialfamily.com behind a proxy (like nginx or Apache), you will need to make sure that `reverseProxy` is set to `true` and the `X-Forwarded-For` header correctly set for session listing to work correctly on the client.
+⚠️ Note that `--home` is now deprecated in favor of the `$LOUNGE_HOME` environment variable (or the `.lounge_home` file in the installation directory). Also, if you are running irc.letstoc.com behind a proxy (like nginx or Apache), you will need to make sure that `reverseProxy` is set to `true` and the `X-Forwarded-For` header correctly set for session listing to work correctly on the client.
 
 Enjoy! 💬
 
@@ -2382,12 +2382,12 @@ This release improves link and image previews a great deal! On the menu:
 - Up to 5 previews are now displayed instead of 1
 - All previews on the current channel can now be hidden or displayed using the `/collapse` and `/expand` commands
 - Thumbnails can be opened in a fullscreen viewer without leaving the app by clicking on them, and cycled using the previous/next buttons or by hitting <kbd>←</kbd> and <kbd>→</kbd>
-- Say bye to mixed content warnings: irc.imperialfamily.com can now proxy all images (opt-in option in the server settings) for better privacy
+- Say bye to mixed content warnings: irc.letstoc.com can now proxy all images (opt-in option in the server settings) for better privacy
 - Title and description are improved overall
 
 Also in this release, auto-complete feature now has an opt-out option in the client settings, and emoji can be searched using fuzzy-matching:
 
-<img width="241" alt="irc.imperialfamily.com - Emoji fuzzy-matching" src="https://user-images.githubusercontent.com/113730/28757682-54276b5a-7556-11e7-9e4b-ce1d19d7b678.png">
+<img width="241" alt="irc.letstoc.com - Emoji fuzzy-matching" src="https://user-images.githubusercontent.com/113730/28757682-54276b5a-7556-11e7-9e4b-ce1d19d7b678.png">
 
 ### Added
 
@@ -2441,7 +2441,7 @@ Also in this release, auto-complete feature now has an opt-out option in the cli
 
 In the main repository:
 
-- Remove mention in CHANGELOG that irc.imperialfamily.com uses Semantic Versioning ([#1269](https://github.com/thelounge/thelounge/pull/1269) by [@astorije](https://github.com/astorije))
+- Remove mention in CHANGELOG that irc.letstoc.com uses Semantic Versioning ([#1269](https://github.com/thelounge/thelounge/pull/1269) by [@astorije](https://github.com/astorije))
 - Remove `devDependencies` badge on README ([#1267](https://github.com/thelounge/thelounge/pull/1267) by [@astorije](https://github.com/astorije))
 - Reword link preview settings to better match reality ([#1310](https://github.com/thelounge/thelounge/pull/1310) by [@astorije](https://github.com/astorije))
 - Update screenshot in README ([#1326](https://github.com/thelounge/thelounge/pull/1326) by [@MaxLeiter](https://github.com/MaxLeiter))
@@ -2584,7 +2584,7 @@ What a release! Our biggest one since the v2.0.0 [release](https://github.com/th
 Expect a lot of new cool stuff, tons of bug fixes and performance improvements.
 Thanks to all 16 contributors (!!) who pitched in for this release, open source at its finest!
 
-On the server side, irc.imperialfamily.com now supports an auto-away mechanism, stores channel keys across restarts and key changes, and supports a new SSL CA bundle option in the configuration file.
+On the server side, irc.letstoc.com now supports an auto-away mechanism, stores channel keys across restarts and key changes, and supports a new SSL CA bundle option in the configuration file.
 
 Users of the client will notice some changes as well:
 
@@ -2592,7 +2592,7 @@ Users of the client will notice some changes as well:
 
 - A new autocomplete mechanism for emoji, users, channels, commands, and colors:
 
-  <img alt="irc.imperialfamily.com - Auto-completion" src="https://user-images.githubusercontent.com/113730/26863276-a565fad8-4b1f-11e7-8aa4-21bb812c2568.gif" width=500>
+  <img alt="irc.letstoc.com - Auto-completion" src="https://user-images.githubusercontent.com/113730/26863276-a565fad8-4b1f-11e7-8aa4-21bb812c2568.gif" width=500>
 
   Note that due to the new nick autocomplete, we removed the now unnecessary nick cycle button that was temporarily added in the meantime. Lots of users have reported it had been broken by a previous release anyway.
 
@@ -2600,16 +2600,16 @@ Users of the client will notice some changes as well:
 
 - Friendliness-bump of time-related tooltips and date marker:
 
-  ![irc.imperialfamily.com - Timestamp tooltips](https://user-images.githubusercontent.com/113730/26863323-f57cb85e-4b1f-11e7-9b4c-27b62d518af5.gif) &nbsp;&nbsp;&nbsp; ![irc.imperialfamily.com - Friendly date marker](https://user-images.githubusercontent.com/113730/26863322-f577f634-4b1f-11e7-8131-c1b3f3ffe743.gif)
+  ![irc.letstoc.com - Timestamp tooltips](https://user-images.githubusercontent.com/113730/26863323-f57cb85e-4b1f-11e7-9b4c-27b62d518af5.gif) &nbsp;&nbsp;&nbsp; ![irc.letstoc.com - Friendly date marker](https://user-images.githubusercontent.com/113730/26863322-f577f634-4b1f-11e7-8131-c1b3f3ffe743.gif)
 
 - Support of browsers' Back/Forward actions:
 
-  <img alt="irc.imperialfamily.com - Support of browser Back/Forward" src="https://user-images.githubusercontent.com/113730/26863320-f5761efe-4b1f-11e7-8fb4-de2c5c34cca3.gif" width=300>
+  <img alt="irc.letstoc.com - Support of browser Back/Forward" src="https://user-images.githubusercontent.com/113730/26863320-f5761efe-4b1f-11e7-8fb4-de2c5c34cca3.gif" width=300>
 
 - Better and more discreet inline previews for links and images:
 
-  <img alt="irc.imperialfamily.com - Link preview" src="https://user-images.githubusercontent.com/113730/26863418-887b9364-4b20-11e7-8016-1b5367690d7e.png" width=400><br>
-  <img alt="irc.imperialfamily.com - Image preview" src="https://user-images.githubusercontent.com/113730/26863419-887bcc4e-4b20-11e7-9055-1913a9aba0e4.png" width=300>
+  <img alt="irc.letstoc.com - Link preview" src="https://user-images.githubusercontent.com/113730/26863418-887b9364-4b20-11e7-8016-1b5367690d7e.png" width=400><br>
+  <img alt="irc.letstoc.com - Image preview" src="https://user-images.githubusercontent.com/113730/26863419-887bcc4e-4b20-11e7-9055-1913a9aba0e4.png" width=300>
 
 - Improved channel list with `/list`
 
@@ -2617,7 +2617,7 @@ Users of the client will notice some changes as well:
 
 - Fuzzy-matching of the user list search to find folks more easily:
 
-  ![irc.imperialfamily.com - Fuzzy matching in the user list](https://user-images.githubusercontent.com/113730/26863472-c86b58c4-4b20-11e7-84c1-f66ee8d3e99b.gif)
+  ![irc.letstoc.com - Fuzzy matching in the user list](https://user-images.githubusercontent.com/113730/26863472-c86b58c4-4b20-11e7-84c1-f66ee8d3e99b.gif)
 
 That's all for this release, and onto the next one now!
 
@@ -2833,7 +2833,7 @@ On the website:
 
 For more details, [see the full changelog](https://github.com/thelounge/thelounge/compare/v2.1.0...v2.2.0) and [milestone](https://github.com/thelounge/thelounge/milestone/2?closed=1).
 
-Another long-overdue release for irc.imperialfamily.com!
+Another long-overdue release for irc.letstoc.com!
 
 On the client, it is now possible to generate URLs that pre-fill connection inputs in public mode, a date separator makes it into the chats, `/away` and `/back` commands are now supported, idle time gets displayed on `/whois`.<br>
 Also, the client does not abruptly refresh when connection is lost anymore, and user search has been slightly improved. Note however that these last 2 items are still not optimal, but improvements are underway!
@@ -2985,7 +2985,7 @@ Enjoy!
 
 This is a minor house-keeping release with mostly two sets of changes.
 
-First, a few bugs were fixed, including one simply preventing irc.imperialfamily.com to run in Safari's private browsing.
+First, a few bugs were fixed, including one simply preventing irc.letstoc.com to run in Safari's private browsing.
 
 Additionally, the developer experience has been made a tiny bit better, with better documentation, lighter dependencies and simpler theme creation.
 
@@ -3014,7 +3014,7 @@ This change brings many improvements and fixes, including support for auto-recon
 
 Main changes on the server include support for WEBIRC, oidentd and LDAP. On the client, users will notice a lot of improvements about reporting unseen activity (notifications, markers, etc.), support for custom highlights, a new loading page, an auto-expanding message input, a theme selector, and more.
 
-Administrators should note that the channel list format in user configuration files has changed. The old format is deprecated, but it will be automatically converted when the server starts (support may or may not be removed later). Additionally, irc.imperialfamily.com now only runs on Node v4 and up.
+Administrators should note that the channel list format in user configuration files has changed. The old format is deprecated, but it will be automatically converted when the server starts (support may or may not be removed later). Additionally, irc.letstoc.com now only runs on Node v4 and up.
 
 The above is only a small subset of changes. A more detailed list can be found below.
 The following list features the most noticeable changes only, and more details can be found on all [v2.0.0 pre-releases](https://www.github.com/thelounge/thelounge/releases).
@@ -3031,7 +3031,7 @@ The following list features the most noticeable changes only, and more details c
 - A proper unread marker ([#332](https://github.com/thelounge/thelounge/pull/332) by [@xPaw](https://github.com/xPaw))
 - Add information on the About section of the client ([#497](https://github.com/thelounge/thelounge/pull/497) by [@astorije](https://github.com/astorije))
 - Add a red dot to the mobile menu icon when being notified ([#486](https://github.com/thelounge/thelounge/pull/486) by [@astorije](https://github.com/astorije))
-- Add "irc.imperialfamily.com" label to the landing pages ([#487](https://github.com/thelounge/thelounge/pull/487) by [@astorije](https://github.com/astorije))
+- Add "irc.letstoc.com" label to the landing pages ([#487](https://github.com/thelounge/thelounge/pull/487) by [@astorije](https://github.com/astorije))
 - Display network name on Connect page when network is locked and info is hidden ([#488](https://github.com/thelounge/thelounge/pull/488) by [@astorije](https://github.com/astorije))
 - Display a loading message instead of blank page ([#386](https://github.com/thelounge/thelounge/pull/386) by [@xPaw](https://github.com/xPaw))
 - Fall back to LOUNGE_HOME env variable when using the CLI ([#402](https://github.com/thelounge/thelounge/pull/402) by [@williamboman](https://github.com/williamboman))
@@ -3119,7 +3119,7 @@ This release candidate only fixes a UI bug affecting iOS 8 users, introduced in 
 
 [See the full changelog](https://github.com/thelounge/thelounge/compare/v2.0.0-pre.7...v2.0.0-rc.1)
 
-Prior to this release, users of Safari 10 were not able to access irc.imperialfamily.com anymore, because of a conscious change the WebKit made to their support of CSP, as [explained here](https://webkit.org/blog/6830/a-refined-content-security-policy/). This release addresses this issue.
+Prior to this release, users of Safari 10 were not able to access irc.letstoc.com anymore, because of a conscious change the WebKit made to their support of CSP, as [explained here](https://webkit.org/blog/6830/a-refined-content-security-policy/). This release addresses this issue.
 
 Another notable change is the removal of tooltips on mobiles, as hovering states on mobile devices breaks in different kind of ways. Hopefully there will be a better solution in the future, or better support across mobiles.
 
@@ -3187,7 +3187,7 @@ This feature will remain in beta version until the official v2.0.0 release.
 
 What an exciting release! It's been in the works for more than a month, but the perks are worth the wait.
 
-On the user side, some long-awaited new features can now be found: irc.imperialfamily.com can now track custom highlights, it comes with an auto-expanding text field, and an unread message marker helps keeping track of what happened when you were not watching. A lot of improvements and various bug fixes have been made to the UI.
+On the user side, some long-awaited new features can now be found: irc.letstoc.com can now track custom highlights, it comes with an auto-expanding text field, and an unread message marker helps keeping track of what happened when you were not watching. A lot of improvements and various bug fixes have been made to the UI.
 Note that scrollbar look-and-feel is now delegated to the browser and OS. Use the custom CSS editor and your OS settings to customize them.
 
 Administrators will notice a different format for channels in the user configuration files, and the Docker-related files have been moved to [a dedicated repository](https://github.com/thelounge/docker-lounge). Many bugs have been solved on the server as well.
@@ -3200,7 +3200,7 @@ Administrators will notice a different format for channels in the user configura
 - A proper unread marker ([#332](https://github.com/thelounge/thelounge/pull/332) by [@xPaw](https://github.com/xPaw))
 - Add information on the About section of the client ([#497](https://github.com/thelounge/thelounge/pull/497) by [@astorije](https://github.com/astorije))
 - Add a red dot to the mobile menu icon when being notified ([#486](https://github.com/thelounge/thelounge/pull/486) by [@astorije](https://github.com/astorije))
-- Add "irc.imperialfamily.com" label to the landing pages ([#487](https://github.com/thelounge/thelounge/pull/487) by [@astorije](https://github.com/astorije))
+- Add "irc.letstoc.com" label to the landing pages ([#487](https://github.com/thelounge/thelounge/pull/487) by [@astorije](https://github.com/astorije))
 - Display network name on Connect page when network is locked and info is hidden ([#488](https://github.com/thelounge/thelounge/pull/488) by [@astorije](https://github.com/astorije))
 
 ### Changed
@@ -3255,10 +3255,10 @@ It also implements token persistency, ensuring users do not have to authenticate
 
 All generated URLs are now HTTP by default, except when explicitly set to HTTPS. For example, `www.example.com` will link to `http://www.example.com`. One needs to share `https://www.example.com` to point others to a HTTPS location.
 
-As a few users have been having issues when running irc.imperialfamily.com with a non-supported Node.js version, we now detect it early to avoid cryptic errors.
+As a few users have been having issues when running irc.letstoc.com with a non-supported Node.js version, we now detect it early to avoid cryptic errors.
 
 This pre-release also adds minor UI improvements, and fixes from the previous version.
-While irc.imperialfamily.com still needs a lot of efforts to be fully accessible, this version slightly improves accessibility on clickable nickname.
+While irc.letstoc.com still needs a lot of efforts to be fully accessible, this version slightly improves accessibility on clickable nickname.
 
 Internally, we now keep track of our code coverage, which we do not enforce strictly at the moment.
 
@@ -3354,7 +3354,7 @@ This pre-release adds a very, very long-awaited feature: auto-reconnection! It a
 
 [See the full changelog](https://github.com/thelounge/thelounge/compare/v1.5.0...v2.0.0-pre.1)
 
-This is a pre-release to allow early adopters to use irc.imperialfamily.com with [`irc-framework`](https://github.com/kiwiirc/irc-framework) as our underlying IRC library instead of [`slate`](https://github.com/slate/slate-irc). This change itself solves a lot of issues and adds many features, most of them [listed here](https://github.com/thelounge/thelounge/pull/167#issue-139286868): IRCv3 compliance, user feedback improvement, etc.
+This is a pre-release to allow early adopters to use irc.letstoc.com with [`irc-framework`](https://github.com/kiwiirc/irc-framework) as our underlying IRC library instead of [`slate`](https://github.com/slate/slate-irc). This change itself solves a lot of issues and adds many features, most of them [listed here](https://github.com/thelounge/thelounge/pull/167#issue-139286868): IRCv3 compliance, user feedback improvement, etc.
 
 It also adds WEBIRC support, a better server logging capability, a web app manifest, improves the sticky scroll, and fixes a ton of bugs.
 
@@ -3421,7 +3421,7 @@ It also adds WEBIRC support, a better server logging capability, a web app manif
 [See the full changelog](https://github.com/thelounge/thelounge/compare/v1.4.3...v1.5.0)
 
 With this release, administrators can now define a maximum size for channel history.
-While this is not optimal nor the definitive solution, it aims at reducing stability issues where irc.imperialfamily.com would crash after filling up the server's memory.
+While this is not optimal nor the definitive solution, it aims at reducing stability issues where irc.letstoc.com would crash after filling up the server's memory.
 
 Other changes noticeable by users include removing custom print styles and preventing sequences of white spaces to collapse into one.
 
@@ -3628,7 +3628,7 @@ Note that this release will reset client-side settings to their defaults. Curren
 
 ### Added
 
-- Allow irc.imperialfamily.com to be proxied behind a `/path/` URL ([#27](https://github.com/thelounge/thelounge/pull/27) by [@gdamjan](https://github.com/gdamjan))
+- Allow irc.letstoc.com to be proxied behind a `/path/` URL ([#27](https://github.com/thelounge/thelounge/pull/27) by [@gdamjan](https://github.com/gdamjan))
 
 ### Changed
 
@@ -3665,7 +3665,7 @@ Note that this release will reset client-side settings to their defaults. Curren
 
 ### Changed
 
-- In the change log, use a permanent URL to link the previous history of irc.imperialfamily.com to Shout ([#12](https://github.com/thelounge/thelounge/pull/12) by [@xPaw](https://github.com/xPaw))
+- In the change log, use a permanent URL to link the previous history of irc.letstoc.com to Shout ([#12](https://github.com/thelounge/thelounge/pull/12) by [@xPaw](https://github.com/xPaw))
 - Update some dependencies and pin versions ([#8](https://github.com/thelounge/thelounge/pull/8) by [@xPaw](https://github.com/xPaw))
 
 ### Fixed
@@ -3677,7 +3677,7 @@ Note that this release will reset client-side settings to their defaults. Curren
 
 [See the full changelog](https://github.com/thelounge/thelounge/compare/baadc3df3534fb22515a8c2ea29218fbbc1228b4...v1.0.0)
 
-This is the first release of **irc.imperialfamily.com**, picking up where Shout `v0.53.0` left off!
+This is the first release of **irc.letstoc.com**, picking up where Shout `v0.53.0` left off!
 
 ### Added
 
@@ -3698,7 +3698,7 @@ This is the first release of **irc.imperialfamily.com**, picking up where Shout 
 - Render user actions separately ([#588](https://github.com/erming/shout/pull/588) by [@xPaw](https://github.com/xPaw))
 - Simply parse all 0-99 IRC colors ([#609](https://github.com/erming/shout/pull/609) by [@xPaw](https://github.com/xPaw))
 - Tag notifications to reduce notification spam ([#418](https://github.com/erming/shout/pull/418) by [@williamboman](https://github.com/williamboman))
-- Change all mentions of Shout to the new name: irc.imperialfamily.com ([#2](https://github.com/thelounge/thelounge/pull/2) by [@astorije](https://github.com/astorije))
+- Change all mentions of Shout to the new name: irc.letstoc.com ([#2](https://github.com/thelounge/thelounge/pull/2) by [@astorije](https://github.com/astorije))
 
 ### Fixed
 

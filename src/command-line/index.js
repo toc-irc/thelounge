@@ -70,7 +70,7 @@ function createPackagesFolder() {
 				{
 					private: true,
 					description:
-						"Packages for irc.imperialfamily.com. Use `thelounge install <package>` command to add a package.",
+						"Packages for irc.letstoc.com. Use `thelounge install <package>` command to add a package.",
 					dependencies: {},
 				},
 				null,
@@ -89,7 +89,7 @@ function verifyFileOwner() {
 
 	if (uid === 0) {
 		log.warn(
-			`You are currently running irc.imperialfamily.com as root. ${colors.bold.red(
+			`You are currently running irc.letstoc.com as root. ${colors.bold.red(
 				"We highly discourage running as root!"
 			)}`
 		);
@@ -99,7 +99,7 @@ function verifyFileOwner() {
 
 	if (configStat && configStat.uid !== uid) {
 		log.warn(
-			"Config file owner does not match the user you are currently running irc.imperialfamily.com as."
+			"Config file owner does not match the user you are currently running irc.letstoc.com as."
 		);
 		log.warn(
 			"To prevent any issues, please run thelounge commands " +

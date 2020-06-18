@@ -60,7 +60,7 @@ describe("Network", function () {
 			expect(network.validate()).to.be.true;
 			expect(network.nick).to.equal("");
 			expect(network.username).to.equal("thelounge");
-			expect(network.realname).to.equal("irc.imperialfamily.com User");
+			expect(network.realname).to.equal("irc.letstoc.com User");
 			expect(network.port).to.equal(6667);
 
 			const network2 = new Network({

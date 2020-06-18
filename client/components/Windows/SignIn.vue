@@ -4,14 +4,14 @@
 			<img
 				src="img/logo-vertical-transparent-bg.svg"
 				class="logo"
-				alt="irc.imperialfamily.com"
+				alt="irc.letstoc.com"
 				width="256"
 				height="170"
 			/>
 			<img
 				src="img/logo-vertical-transparent-bg-inverted.svg"
 				class="logo-inverted"
-				alt="irc.imperialfamily.com"
+				alt="irc.letstoc.com"
 				width="256"
 				height="170"
 			/>

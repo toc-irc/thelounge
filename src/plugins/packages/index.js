@@ -126,7 +126,7 @@ function loadPackage(packageName) {
 
 		log.info(
 			"There are packages using the experimental plugin API. " +
-				"Be aware that this API is not yet stable and may change in future irc.imperialfamily.com releases."
+				"Be aware that this API is not yet stable and may change in future irc.letstoc.com releases."
 		);
 	}
 }

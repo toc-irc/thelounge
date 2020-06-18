@@ -105,7 +105,7 @@ function checkForUpdates(manager) {
 		}
 
 		log.info(
-			`irc.imperialfamily.com ${colors.green(
+			`irc.letstoc.com ${colors.green(
 				versionData.latest.version
 			)} is available. Read more on GitHub: ${versionData.latest.url}`
 		);

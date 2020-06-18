@@ -81,7 +81,7 @@ function loadFromLocalStorage() {
 		return {};
 	}
 
-	// Older irc.imperialfamily.com versions converted highlights to an array, turn it back into a string
+	// Older irc.letstoc.com versions converted highlights to an array, turn it back into a string
 	if (typeof storedSettings.highlights === "object") {
 		storedSettings.highlights = storedSettings.highlights.join(", ");
 	}

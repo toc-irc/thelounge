@@ -9,6 +9,6 @@ labels: "Type: Bug"
 - _Node version:_
 - _Browser version:_
 - _Device, operating system:_
-- _irc.imperialfamily.com version:_
+- _irc.letstoc.com version:_
 
 ---

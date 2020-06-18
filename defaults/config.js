@@ -5,7 +5,7 @@ module.exports = {
 
 	// ### `public`
 	//
-	// When set to `true`, irc.imperialfamily.com starts in public mode. When set to `false`,
+	// When set to `true`, irc.letstoc.com starts in public mode. When set to `false`,
 	// it starts in private mode.
 	//
 	// - A **public server** does not require authentication. Anyone can connect
@@ -45,7 +45,7 @@ module.exports = {
 
 	// ### `reverseProxy`
 	//
-	// When set to `true`, irc.imperialfamily.com is marked as served behind a reverse proxy
+	// When set to `true`, irc.letstoc.com is marked as served behind a reverse proxy
 	// and will honor the `X-Forwarded-For` header.
 	//
 	// This value is set to `false` by default.
@@ -62,7 +62,7 @@ module.exports = {
 
 	// ### `https`
 	//
-	// These settings are used to run irc.imperialfamily.com's web server using encrypted TLS.
+	// These settings are used to run irc.letstoc.com's web server using encrypted TLS.
 	//
 	// If you want more control over the webserver,
 	// [use a reverse proxy instead](https://thelounge.chat/docs/guides/reverse-proxies).
@@ -91,7 +91,7 @@ module.exports = {
 	// Set the default theme to serve to new users. They will be able to select a
 	// different one in their client settings among those available.
 	//
-	// irc.imperialfamily.com ships with two themes (`default` and `morning`) and can be
+	// irc.letstoc.com ships with two themes (`default` and `morning`) and can be
 	// extended by installing more themes. Read more about how to manage them
 	// [here](https://thelounge.chat/docs/guides/theme-creation).
 	//
@@ -104,7 +104,7 @@ module.exports = {
 
 	// ### `prefetch`
 	//
-	// When set to `true`, irc.imperialfamily.com will load thumbnails and site descriptions
+	// When set to `true`, irc.letstoc.com will load thumbnails and site descriptions
 	// from URLs posted in channels and private messages.
 	//
 	// This value is set to `false` by default.
@@ -112,19 +112,19 @@ module.exports = {
 
 	// ### `prefetchStorage`
 
-	// When set to `true`, irc.imperialfamily.com will store and proxy prefetched images and
+	// When set to `true`, irc.letstoc.com will store and proxy prefetched images and
 	// thumbnails on the filesystem rather than directly display the content at
 	// the original URLs.
 	//
 	// This improves security and privacy by not exposing the client IP address,
-	// always loading images from irc.imperialfamily.com and making all assets secure, which
+	// always loading images from irc.letstoc.com and making all assets secure, which
 	// resolves mixed content warnings.
 	//
-	// If storage is enabled, irc.imperialfamily.com will fetch and store images and thumbnails
+	// If storage is enabled, irc.letstoc.com will fetch and store images and thumbnails
 	// in the `${THELOUNGE_HOME}/storage` folder.
 	//
 	// Images are deleted when they are no longer referenced by any message
-	// (controlled by `maxHistory`), and the folder is cleaned up when irc.imperialfamily.com
+	// (controlled by `maxHistory`), and the folder is cleaned up when irc.letstoc.com
 	// restarts.
 	//
 	// This value is set to `false` by default.
@@ -140,10 +140,10 @@ module.exports = {
 
 	// ### `fileUpload`
 	//
-	// Allow uploading files to the server hosting irc.imperialfamily.com.
+	// Allow uploading files to the server hosting irc.letstoc.com.
 	//
 	// Files are stored in the `${THELOUNGE_HOME}/uploads` folder, do not expire,
-	// and are not removed by irc.imperialfamily.com. This may cause issues depending on your
+	// and are not removed by irc.letstoc.com. This may cause issues depending on your
 	// hardware, for example in terms of disk usage.
 	//
 	// The available keys for the `fileUpload` object are:
@@ -158,7 +158,7 @@ module.exports = {
 	//   you can set this option to `"https://example.com/folder/"` and the final URL
 	//   would look like `"https://example.com/folder/aabbccddeeff1234/name.png"`.
 	//   If you use this option, you must have a reverse proxy configured,
-	//   to correctly proxy the uploads URLs back to irc.imperialfamily.com.
+	//   to correctly proxy the uploads URLs back to irc.letstoc.com.
 	//   This value is set to `null` by default.
 	fileUpload: {
 		enable: false,
@@ -178,9 +178,9 @@ module.exports = {
 	// Set users' default `quit` and `part` messages if they are not providing
 	// one.
 	//
-	// This value is set to `"irc.imperialfamily.com - https://thelounge.chat"` by
+	// This value is set to `"irc.letstoc.com - https://thelounge.chat"` by
 	// default.
-	leaveMessage: "irc.imperialfamily.com - https://thelounge.chat",
+	leaveMessage: "irc.letstoc.com - https://thelounge.chat",
 
 	// ## Default network
 
@@ -191,7 +191,7 @@ module.exports = {
 	//
 	// The available keys for the `defaults` object are:
 	//
-	// - `name`: Name to display in the channel list of irc.imperialfamily.com. This value is
+	// - `name`: Name to display in the channel list of irc.letstoc.com. This value is
 	//   not forwarded to the IRC network.
 	// - `host`: IP address or hostname of the IRC server.
 	// - `port`: Usually 6667 for unencrypted connections and 6697 for
@@ -208,7 +208,7 @@ module.exports = {
 	// - `realname`: Real name.
 	// - `join`: Comma-separated list of channels to auto-join once connected.
 	//
-	// This value is set to connect to the official channel of irc.imperialfamily.com on
+	// This value is set to connect to the official channel of irc.letstoc.com on
 	// Freenode by default:
 	//
 	// ```js
@@ -221,7 +221,7 @@ module.exports = {
 	//   rejectUnauthorized: true,
 	//   nick: "thelounge%%",
 	//   username: "thelounge",
-	//   realname: "irc.imperialfamily.com User",
+	//   realname: "irc.letstoc.com User",
 	//   join: "#thelounge"
 	// }
 	// ```
@@ -234,7 +234,7 @@ module.exports = {
 		rejectUnauthorized: true,
 		nick: "dnslive%%",
 		username: "thelounge",
-		realname: "irc.imperialfamily.com User",
+		realname: "irc.letstoc.com User",
 		join: "#thelounge",
 	},
 
@@ -265,7 +265,7 @@ module.exports = {
 
 	// ### `messageStorage`
 
-	// irc.imperialfamily.com can log user messages, for example to access them later or to
+	// irc.letstoc.com can log user messages, for example to access them later or to
 	// reload messages on server restart.
 
 	// Set this array with one or multiple values to enable logging:
@@ -293,9 +293,9 @@ module.exports = {
 
 	// ## WEBIRC support
 	//
-	// When enabled, irc.imperialfamily.com will pass the connecting user's host and IP to the
+	// When enabled, irc.letstoc.com will pass the connecting user's host and IP to the
 	// IRC server. Note that this requires to obtain a password from the IRC
-	// network that irc.imperialfamily.com will be connecting to and generally involves a lot
+	// network that irc.letstoc.com will be connecting to and generally involves a lot
 	// of trust from the network you are connecting to.
 	//
 	// There are 2 ways to configure the `webirc` setting:
@@ -332,7 +332,7 @@ module.exports = {
 
 	// ### `identd`
 	//
-	// Run irc.imperialfamily.com with `identd` support.
+	// Run irc.letstoc.com with `identd` support.
 	//
 	// The available keys for the `identd` object are:
 	//
@@ -365,10 +365,10 @@ module.exports = {
 	//
 	// The authentication process works as follows:
 	//
-	// 1. irc.imperialfamily.com connects to the LDAP server with its system credentials.
+	// 1. irc.letstoc.com connects to the LDAP server with its system credentials.
 	// 2. It performs an LDAP search query to find the full DN associated to the
 	//    user requesting to log in.
-	// 3. irc.imperialfamily.com tries to connect a second time, but this time using the
+	// 3. irc.letstoc.com tries to connect a second time, but this time using the
 	//    user's DN and password. Authentication is validated if and only if this
 	//    connection is successful.
 	//
@@ -419,7 +419,7 @@ module.exports = {
 		//   When unset, the LDAP auth logic with use `searchDN` instead to locate users.
 
 		// - `searchDN`: LDAP search DN settings. This defines the procedure by
-		//   which irc.imperialfamily.com first looks for the user DN before authenticating them.
+		//   which irc.letstoc.com first looks for the user DN before authenticating them.
 		//   It is ignored if `baseDN` is specified. It is an object with the
 		//   following keys:
 		searchDN: {
@@ -430,7 +430,7 @@ module.exports = {
 			//     default.
 			rootDN: "cn=thelounge,ou=system-users,dc=example,dc=com",
 
-			//   - `rootPassword`: Password of irc.imperialfamily.com LDAP system user.
+			//   - `rootPassword`: Password of irc.letstoc.com LDAP system user.
 			rootPassword: "1234",
 
 			//   - `ldapFilter`: it is set to `"(objectClass=person)(memberOf=ou=accounts,dc=example,dc=com)"`
@@ -459,7 +459,7 @@ module.exports = {
 		//
 		// When set to true, this enables extra debugging output provided by
 		// [`irc-framework`](https://github.com/kiwiirc/irc-framework), the
-		// underlying IRC library for Node.js used by irc.imperialfamily.com.
+		// underlying IRC library for Node.js used by irc.letstoc.com.
 		ircFramework: false,
 
 		// ### `debug.raw`

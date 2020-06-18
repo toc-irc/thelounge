@@ -1,6 +1,6 @@
 ## Support
 
-Welcome to irc.imperialfamily.com, it's great to have you here! If you have a question, or
+Welcome to irc.letstoc.com, it's great to have you here! If you have a question, or
 need help, you have a few options:
 
 - Check out [existing questions on Stack Overflow](https://stackoverflow.com/questions/tagged/thelounge)

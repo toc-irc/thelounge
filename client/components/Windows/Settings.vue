@@ -38,7 +38,7 @@
 					class="btn"
 					@click.prevent="nativeInstallPrompt"
 				>
-					Add irc.imperialfamily.com to Home screen
+					Add irc.letstoc.com to Home screen
 				</button>
 				<button
 					v-if="canRegisterProtocol"
@@ -46,7 +46,7 @@
 					class="btn"
 					@click.prevent="registerProtocol"
 				>
-					Open irc:// URLs with irc.imperialfamily.com
+					Open irc:// URLs with irc.letstoc.com
 				</button>
 			</div>
 
@@ -122,7 +122,7 @@
 						type="text"
 						name="awayMessage"
 						class="input"
-						placeholder="Away message if irc.imperialfamily.com is not open"
+						placeholder="Away message if irc.letstoc.com is not open"
 					/>
 				</label>
 			</div>
@@ -304,7 +304,7 @@ This may break orientation if your browser does not support that."
 								rel="noopener"
 								>not support the web push notification specification</a
 							>, and because all browsers on iOS use Safari under the hood,
-							irc.imperialfamily.com is unable to provide push notifications on iOS
+							irc.letstoc.com is unable to provide push notifications on iOS
 							devices.
 						</div>
 					</div>
@@ -596,7 +596,7 @@ export default {
 			document.cookie = "jbnc.password" + "=;";
 			this.$store.state.existingNick = null;
 			this.$store.state.existingPassword = null;
-			location.replace("https://irc.imperialfamily.com");
+			location.replace("https://irc.letstoc.com");
 		},
 		doLogoutIRC() {
 			socket.emit("input", {
@@ -665,8 +665,8 @@ export default {
 		registerProtocol() {
 			const uri = document.location.origin + document.location.pathname + "?uri=%s";
 
-			window.navigator.registerProtocolHandler("irc", uri, "irc.imperialfamily.com");
-			window.navigator.registerProtocolHandler("ircs", uri, "irc.imperialfamily.com");
+			window.navigator.registerProtocolHandler("irc", uri, "irc.letstoc.com");
+			window.navigator.registerProtocolHandler("ircs", uri, "irc.letstoc.com");
 		},
 		nativeInstallPrompt() {
 			installPromptEvent.prompt();

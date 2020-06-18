@@ -16,7 +16,7 @@
 	<% }); %>
 	<style id="user-specified-css"></style>
 
-	<title>irc.imperialfamily.com</title>
+	<title>irc.letstoc.com</title>
 
 	<!-- Browser tab icon -->
 	<link id="favicon" rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico" data-other="img/favicon-alerted.ico" type="image/x-icon">
@@ -36,7 +36,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/logo-grey-bg-180x180px.png">
 
 	<!-- Windows 8/10 - Edge tiles -->
-	<meta name="application-name" content="irc.imperialfamily.com">
+	<meta name="application-name" content="irc.letstoc.com">
 	<meta name="msapplication-TileColor" content="<%- themeColor %>">
 	<meta name="msapplication-square70x70logo" content="img/logo-grey-bg-120x120px.png">
 	<meta name="msapplication-square150x150logo" content="img/logo-grey-bg-152x152px.png">
@@ -52,9 +52,9 @@
 		<div id="loading">
 			<div class="window">
 				<div id="loading-status-container">
-					<img src="img/logo-vertical-transparent-bg.svg" class="logo" alt="irc.imperialfamily.com" width="256" height="170">
-					<img src="img/logo-vertical-transparent-bg-inverted.svg" class="logo-inverted" alt="irc.imperialfamily.com" width="256" height="170">
-					<p id="loading-page-message">irc.imperialfamily.com requires a modern browser with JavaScript enabled.</p>
+					<img src="img/logo-vertical-transparent-bg.svg" class="logo" alt="irc.letstoc.com" width="256" height="170">
+					<img src="img/logo-vertical-transparent-bg-inverted.svg" class="logo-inverted" alt="irc.letstoc.com" width="256" height="170">
+					<p id="loading-page-message">irc.letstoc.com requires a modern browser with JavaScript enabled.</p>
 				</div>
 				<div id="loading-reload-container">
 					<p id="loading-slow">This is taking longer than it should, there might be connectivity issues.</p>

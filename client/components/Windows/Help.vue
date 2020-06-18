@@ -20,13 +20,13 @@
 			<h1 class="title">Help</h1>
 
 			<h2 class="help-version-title">
-				<span>About irc.imperialfamily.com</span>
+				<span>About irc.letstoc.com</span>
 			</h2>
 
 			<div class="about">
 				<p>
 					<a
-						href="https://imperialfamily.com"
+						href="https://letstoc.com"
 						target="_blank"
 						rel="noopener"
 						class="website-link"
@@ -507,7 +507,7 @@
 				</div>
 				<div class="description">
 					<p>
-						Send an action message to the current channel. irc.imperialfamily.com will
+						Send an action message to the current channel. irc.letstoc.com will
 						display it inline, as if the message was posted in the third person.
 					</p>
 				</div>

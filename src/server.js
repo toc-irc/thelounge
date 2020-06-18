@@ -33,7 +33,7 @@ const serverHash = Math.floor(Date.now() * Math.random());
 let manager = null;
 
 module.exports = function (options = {}) {
-	log.info(`irc.imperialfamily.com ${colors.green(Helper.getVersion())} \
+	log.info(`irc.letstoc.com ${colors.green(Helper.getVersion())} \
 (Node.js ${colors.green(process.versions.node)} on ${colors.green(process.platform)} ${
 		process.arch
 	})`);
@@ -567,7 +567,7 @@ function initializeClient(socket, client, token, lastMessage, openChannel) {
 				client.manager.webPush.pushSingle(client, registration, {
 					type: "notification",
 					timestamp: Date.now(),
-					title: "irc.imperialfamily.com",
+					title: "irc.letstoc.com",
 					body: "🚀 Push notifications have been enabled",
 				});
 			}

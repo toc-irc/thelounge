@@ -321,7 +321,7 @@ function getRequestHeaders(headers) {
 		// Certain websites like Amazon only add <meta> tags to known bots,
 		// lets pretend to be them to get the metadata
 		"User-Agent":
-			"Mozilla/5.0 (compatible; irc.imperialfamily.com IRC Client; +https://github.com/thelounge/thelounge)" +
+			"Mozilla/5.0 (compatible; irc.letstoc.com IRC Client; +https://github.com/thelounge/thelounge)" +
 			" facebookexternalhit/1.1 Twitterbot/1.0",
 		Accept: headers.accept || "*/*",
 		"X-Purpose": "preview",

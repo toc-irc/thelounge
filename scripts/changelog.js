@@ -1,5 +1,5 @@
 /*
-This (very irc.imperialfamily.com-custom) script is a helper to generate changelog entries.
+This (very irc.letstoc.com-custom) script is a helper to generate changelog entries.
 
 Note that it is not meant to produce fully-automated changelogs like other tools
 do, but merely prepare a changelog entry without risks of mistyping a URL or
@@ -228,7 +228,7 @@ function stableVersion(prereleaseVersion) {
 	return prereleaseVersion.substr(0, prereleaseVersion.indexOf("-"));
 }
 
-// Generates a compare-view URL between 2 versions of irc.imperialfamily.com
+// Generates a compare-view URL between 2 versions of irc.letstoc.com
 function fullChangelogUrl(v1, v2) {
 	return `https://github.com/thelounge/thelounge/compare/v${v1}...v${v2}`;
 }

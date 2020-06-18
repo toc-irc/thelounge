@@ -12,13 +12,13 @@ const pkg = require("./package.json");
 if (!require("semver").satisfies(process.version, pkg.engines.node)) {
 	/* eslint-disable no-console */
 	console.error(
-		"irc.imperialfamily.com requires Node.js " +
+		"irc.letstoc.com requires Node.js " +
 			pkg.engines.node +
 			" (current version: " +
 			process.version +
 			")"
 	);
-	console.error("Please upgrade Node.js in order to use irc.imperialfamily.com");
+	console.error("Please upgrade Node.js in order to use irc.letstoc.com");
 	console.error("See https://thelounge.chat/docs/install-and-upgrade");
 	console.error();
 

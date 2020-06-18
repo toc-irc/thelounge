@@ -40,7 +40,7 @@ describe("Msg", function () {
 				},
 				{
 					body: "",
-					head: "irc.imperialfamily.com",
+					head: "irc.letstoc.com",
 					link: "https://thelounge.chat/",
 					thumb: "",
 					type: "link",
@@ -51,7 +51,7 @@ describe("Msg", function () {
 
 		it("should find a preview given an existing link", function () {
 			expect(msg.findPreview("https://thelounge.chat/").head).to.equal(
-				"irc.imperialfamily.com"
+				"irc.letstoc.com"
 			);
 		});
 

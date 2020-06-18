@@ -1,4 +1,4 @@
-// irc.imperialfamily.com - https://github.com/thelounge/thelounge
+// irc.letstoc.com - https://github.com/thelounge/thelounge
 /* global clients */
 "use strict";
 

@@ -77,7 +77,7 @@ Network.prototype.validate = function (client) {
 	}
 
 	this.username = cleanString(this.username) || "thelounge";
-	this.realname = cleanString(this.realname) || "irc.imperialfamily.com User";
+	this.realname = cleanString(this.realname) || "irc.letstoc.com User";
 	this.password = cleanString(this.password);
 	this.host = cleanString(this.host).toLowerCase();
 	this.name = cleanString(this.name);

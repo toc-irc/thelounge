@@ -34,7 +34,7 @@ describe("Server", function () {
 		it("should run a web server on " + webURL, async () => {
 			const response = await got(webURL);
 			expect(response.statusCode).to.equal(200);
-			expect(response.body).to.include("<title>irc.imperialfamily.com</title>");
+			expect(response.body).to.include("<title>irc.letstoc.com</title>");
 			expect(response.body).to.include("js/bundle.js");
 		});
 
@@ -43,7 +43,7 @@ describe("Server", function () {
 			const body = JSON.parse(response.body);
 
 			expect(response.statusCode).to.equal(200);
-			expect(body.name).to.equal("irc.imperialfamily.com");
+			expect(body.name).to.equal("irc.letstoc.com");
 			expect(response.headers["content-type"]).to.equal("application/manifest+json");
 		});
 	});
@@ -80,7 +80,7 @@ describe("Server", function () {
 			client.on("init", () => {
 				client.emit("network:new", {
 					username: "test-user",
-					realname: "irc.imperialfamily.com Test",
+					realname: "irc.letstoc.com Test",
 					nick: "test-user",
 					join: "#thelounge, #spam",
 					name: "Test Network",

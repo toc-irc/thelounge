@@ -17,7 +17,7 @@ function User(attr, prefixLookup) {
 }
 
 User.prototype.setModes = function (modes, prefixLookup) {
-	// irc-framework sets character mode, but irc.imperialfamily.com works with symbols
+	// irc-framework sets character mode, but irc.letstoc.com works with symbols
 	this.modes = modes.map((mode) => prefixLookup[mode]);
 
 	this.mode = this.modes[0] || "";

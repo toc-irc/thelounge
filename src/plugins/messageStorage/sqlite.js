@@ -79,7 +79,7 @@ class MessageStorage {
 
 					if (storedSchemaVersion > currentSchemaVersion) {
 						return log.error(
-							`sqlite messages schema version is higher than expected (${storedSchemaVersion} > ${currentSchemaVersion}). Is irc.imperialfamily.com out of date?`
+							`sqlite messages schema version is higher than expected (${storedSchemaVersion} > ${currentSchemaVersion}). Is irc.letstoc.com out of date?`
 						);
 					}
 

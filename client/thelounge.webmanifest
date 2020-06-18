@@ -1,6 +1,6 @@
 {
-	"name": "irc.imperialfamily.com",
-	"short_name": "irc.imperialfamily.com",
+	"name": "irc.letstoc.com",
+	"short_name": "irc.letstoc.com",
 	"description": "Self-hosted web IRC client",
 	"start_url": ".",
 	"display": "standalone",

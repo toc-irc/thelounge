@@ -115,7 +115,7 @@ export default {
 				);
 			}
 
-			// If irc.imperialfamily.com is opened on a small screen (less than 1024px), and we don't have stored
+			// If irc.letstoc.com is opened on a small screen (less than 1024px), and we don't have stored
 			// user list state, close it by default
 			if (viewportWidth >= 1024 && isUserlistOpen !== "true" && isUserlistOpen !== "false") {
 				isUserlistOpen = "true";

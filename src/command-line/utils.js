@@ -108,7 +108,7 @@ class Utils {
 			// We only ever operate in production mode
 			NODE_ENV: "production",
 
-			// If irc.imperialfamily.com runs from a user that does not have a home directory,
+			// If irc.letstoc.com runs from a user that does not have a home directory,
 			// yarn may fail when it tries to read certain folders,
 			// we give it an existing folder so the reads do not throw a permission error.
 			// Yarn uses os.homedir() to figure out the path, which internally reads

@@ -34,7 +34,7 @@ program
 					log.error(
 						`${colors.red(
 							json.name + " v" + json.version
-						)} does not have irc.imperialfamily.com metadata.`
+						)} does not have irc.letstoc.com metadata.`
 					);
 
 					process.exit(1);

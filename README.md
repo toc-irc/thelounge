@@ -15,7 +15,7 @@ Before submitting any change, make sure to:
 - Read the [Contributing instructions](https://github.com/thelounge/thelounge/blob/master/.github/CONTRIBUTING.md#contributing)
 - Run `yarn test` to execute linters and test suite
 - Run `yarn build` if you change or add anything in `client/js` or `client/views`
-- `yarn dev` can be used to start irc.imperialfamily.com with hot module reloading
+- `yarn dev` can be used to start irc.letstoc.com with hot module reloading
 
 ## Fork/Custom edit of thelounge
 
@@ -23,7 +23,7 @@ Before submitting any change, make sure to:
 
 ## Demo
 
-- https://irc.imperialfamily.com
+- https://irc.letstoc.com
 
 ## Install & Go:
 
@@ -79,9 +79,9 @@ cp chat.svg logo-vertical-transparent-bg.svg
 
 # Change the name of your webclient's irc server from imperialfamily to yours. Please cat README.md to get the commands right
 
-find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.imperialfamily.com/irc.yourorg.com/g'
+find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.letstoc.com/irc.yourorg.com/g'
 
-find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/imperialfamily.com/https:\/\/yourorgsite.com/g'
+find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/https:\/\/letstoc.com/https:\/\/yourorgsite.com/g'
 
 cd to thelounge
 
