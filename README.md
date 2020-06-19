@@ -77,7 +77,7 @@ cp chat.svg logo-vertical-transparent-bg-inverted.svg
 
 cp chat.svg logo-vertical-transparent-bg.svg
 
-# Change the name of your webclient's irc server from imperialfamily to yours. Please cat README.md to get the commands right
+# Change the name of your webclient's irc server from letstoc to yours. Please cat README.md to get the commands right
 
 find /home/ircd/thelounge \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i 's/irc.letstoc.com/irc.yourorg.com/g'
 
